@@ -52,3 +52,34 @@ upperEl.on('click', function() {
     console.log(test);
 });
 
+// change color when clicked
+
+createEl.on('click', function() {
+    createEl.css('background-color', 'darkgoldenrod');
+    upperEl.css('background-color', '');
+    lowerEl.css('background-color', '');
+    fullEl.css('background-color', '');
+})
+
+upperEl.on('click', function() {
+    createEl.css('background-color', '');
+    upperEl.css('background-color', 'darkgoldenrod');
+    lowerEl.css('background-color', '');
+    fullEl.css('background-color', '');
+
+})
+
+lowerEl.on('click', function() {
+    createEl.css('background-color', '');
+    upperEl.css('background-color', '');
+    lowerEl.css('background-color', 'darkgoldenrod');
+    fullEl.css('background-color', '');
+})
+
+fullEl.on('click', function() {
+    createEl.css('background-color', '');
+    upperEl.css('background-color', '');
+    lowerEl.css('background-color', '');
+    fullEl.css('background-color', 'darkgoldenrod');
+})
+
