@@ -1,5 +1,75 @@
 
 body {
+<<<<<<< HEAD
+    background: #525252;
+}
+h1,h2,h3,h4,p{
+    color: white;
+    text-align: center;
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+/* Header */
+.header{
+    background-color: #333;
+text-align: center;
+font-size: 60px;
+color: white;
+padding: 50px;
+}
+
+
+.pure-g > div {
+    box-sizing: border-box;
+}
+
+
+           /* MAIN ID's */
+#type-workout{
+    text-align: center;
+    padding: 20px;
+}
+#time-workout{
+    text-align: center;
+    padding: 20px;
+}
+#welcome-question{
+    color: white;
+    padding: 10px;
+    font-size: 40px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: right;
+    padding: 0 10px;
+    
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+=======
   background: salmon;
 }
 
@@ -173,3 +243,4 @@ body {
     margin: 0 1em 1em 0;
   }
 
+>>>>>>> dev
