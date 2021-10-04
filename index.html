@@ -62,31 +62,42 @@
                     <div id="body-parts">
                         <div id="upper-filter" class=""></div>  <!-- May need to create arrays of what exercises are upper/lower/full in order to sort this -->
                         <div id="lower-filter" class=""></div>
-                        <div id="full-filter" class=""></div>
-                        <div id="abs-filter" class=""></div>  
+                        <div id="lowback/abs-filter" class=""></div> 
                     </div>
-                    <div id="upper-muscles">
-                        <div id="pecs"></div>
-                        <div id="biceps"></div>
-                        <div id="triceps"></div>
-                        <div id="shoulders"></div>
-                        <div id="lats"></div>
-                        <div id="traps"></div>
-                    </div>         
-                    <div id="lower-muscles">
-                        <div id="quads"></div>
-                        <div id="hamstrings"></div>
-                        <div id="glutes"></div>
-                        <div id="calves"></div>
-                    </div>                         
-                </div>                                          <!-- NP: Gotta check if this is available with API or manually create list -->
+                    <div id="muscle-types" class="">
+                        <div id="upper-muscles" class="">
+                            <div id="pecs" class=""></div>
+                            <div id="biceps" class=""></div>
+                            <div id="triceps" class=""></div>
+                            <div id="shoulders" class=""></div>
+                            <div id="lats" class=""></div>
+                            <div id="traps" class=""></div>
+                        </div>         
+                        <div id="lower-muscles" class="">
+                            <div id="quads" class=""></div>
+                            <div id="hamstrings" class=""></div>
+                            <div id="glutes" class=""></div>
+                            <div id="calves" class=""></div>
+                        </div>
+                        <div id="abs-lowback-muscles" class="">
+                            <div id="abs" class=""></div>
+                            <div id="spine" class=""></div>
+                        </div>                     
+                    </div>        
+                </div>                                          
+                <div id="filter-btns" class="">
+                    <button id="next-btn" class="">Next</button>
+                    <button id="back-btn" class="">Back</button>
+                    <button id="reset-btn" class="">Reset Filters</button>
+                </div>
             </form>
             <div id="exercises" class="">                       <!-- MVP: will be on right side of modal -->
                 <ul id="exercise-list" class="">                <!-- Going to present the exercises we can choose from with a scrollbar to the side -->
                     <li></li>                                   <!-- if exercise is clicked on it will change to indicate choice -->
                 </ul>
-            </div>                                              <!-- There will be a close(X) button at top right of modal -->
-            <button id="modal-add" class=""></button>           <!-- when this button is clicked, modal closes and exercises(if any) are appended into "chosen-list" -->
+            </div>      
+            <button id="clearmodal-btn" class="">Clear Exercises</button>                                        <!-- There will be a close(X) button at top right of modal -->
+            <button id="modal-add" class="">Submit Exercises</button>           <!-- when this button is clicked, modal closes and exercises(if any) are appended into "chosen-list" -->
         </section>
     </main>  
     <footer>
