@@ -5,6 +5,8 @@ var createEl = $("#create");
 var typeWorkoutEl = $("#type-workout");
 var exerciseList;
 var test;
+var exEl = $('.ex');
+var chosenListEl = $('#chosen-list');
 
 // gets all data from API and saves it locally
 
@@ -42,15 +44,18 @@ localOrApi();
 
 // this is a test search returning exercises that meet the lised conditions
 
-upperEl.on('click', function() {
+function generateCard(testsearch) {
     test = [];
     for (i=0; i < exerciseList.length; i++) {
-        if (exerciseList[i].bodyPart === 'upper arms' && exerciseList[i].target === "triceps" && (exerciseList[i].equipment === 'cable' || exerciseList[i].equipment === 'body weight')) { 
+        if (exerciseList[i].name === testsearch) { 
         test.push(exerciseList[i])
         }
     }
-    console.log(test);
-});
+    var pic = test[0].gifUrl;
+    chosenListEl.append('<li class="ex"><div>name: ' + test[0].name + '</div><div>Equipment: ' + test[0].equipment + '</div><div class="hide"><img style=width:100px;height:100px" src="' + pic + '"></div>');
+}
+
+// upperEl.click(search('dumbbell bench press'));
 
 // change color when clicked
 
@@ -66,6 +71,9 @@ upperEl.on('click', function() {
     upperEl.css('background-color', 'darkgoldenrod');
     lowerEl.css('background-color', '');
     fullEl.css('background-color', '');
+    chosenListEl.html('');
+    generateCard('dumbbell bench press');
+    generateCard('dumbbell biceps curl')
 
 })
 
@@ -81,4 +89,31 @@ fullEl.on('click', function() {
     upperEl.css('background-color', '');
     lowerEl.css('background-color', '');
     fullEl.css('background-color', 'darkgoldenrod');
+})
+
+$(function () {
+    $('#chosen-list').sortable();
+});
+
+
+
+
+chosenListEl.on('mouseleave', '.ex', function(event) {   
+    event.stopPropagation();
+    var imgEl = $(this).find(':nth-child(3)');
+    imgEl.toggleClass('hide');
+    
+})
+
+chosenListEl.on('mouseenter', '.ex', function(event) {   
+    event.stopPropagation();
+    var imgEl = $(this).find(':nth-child(3)');
+    imgEl.toggleClass('hide');
+    
+})
+
+chosenListEl.on('click', '.ex', function(event) {
+    event.stopPropagation();
+    $(this).toggleClass('overlay');  
+    
 })
