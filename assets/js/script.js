@@ -3,8 +3,12 @@ var lowerEl = $("#lower");
 var fullEl = $("#full");
 var createEl = $("#create");
 var typeWorkoutEl = $("#type-workout");
+var searchInput = $('#text-bar')
 var exerciseList;
 var test;
+var upperBody;
+var lowerBody;
+
 
 // gets all data from API and saves it locally
 
