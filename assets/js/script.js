@@ -82,4 +82,3 @@ fullEl.on('click', function() {
     lowerEl.css('background-color', '');
     fullEl.css('background-color', 'darkgoldenrod');
 })
-
