@@ -53,11 +53,33 @@
             <form id="search-bar" class="">                     <!-- will be on left side of modal -->
                 <input type="text" id="text-bar" class="">      <!-- how about this? good reference https://www.w3schools.com/howto/howto_js_filter_lists.asp -->
                 <div id="filter-bar" class="">                  <!-- maybe want to look into thishttps://www.w3schools.com/howto/howto_js_filter_elements.asp-->
-                    <div id="upper-filter" class=""></div>      <!-- May need to create arrays of what exercises are upper/lower/full in order to sort this -->
-                    <div id="lower-filter" class=""></div>
-                    <div id="full-filter" class=""></div>
-                    <div id="abs-filter" class=""></div>            <!-- NP: Gotta check if this is available with API or manually create list -->
-                </div>
+                    <div id="equipment-types">
+                        <div id="body-weight"></div>
+                        <div id="dumb-bells"></div>
+                        <div id="barbells"></div>
+                        <div id="machine"></div>
+                    </div>
+                    <div id="body-parts">
+                        <div id="upper-filter" class=""></div>  <!-- May need to create arrays of what exercises are upper/lower/full in order to sort this -->
+                        <div id="lower-filter" class=""></div>
+                        <div id="full-filter" class=""></div>
+                        <div id="abs-filter" class=""></div>  
+                    </div>
+                    <div id="upper-muscles">
+                        <div id="pecs"></div>
+                        <div id="biceps"></div>
+                        <div id="triceps"></div>
+                        <div id="shoulders"></div>
+                        <div id="lats"></div>
+                        <div id="traps"></div>
+                    </div>         
+                    <div id="lower-muscles">
+                        <div id="quads"></div>
+                        <div id="hamstrings"></div>
+                        <div id="glutes"></div>
+                        <div id="calves"></div>
+                    </div>                         
+                </div>                                          <!-- NP: Gotta check if this is available with API or manually create list -->
             </form>
             <div id="exercises" class="">                       <!-- MVP: will be on right side of modal -->
                 <ul id="exercise-list" class="">                <!-- Going to present the exercises we can choose from with a scrollbar to the side -->
