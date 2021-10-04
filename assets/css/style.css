@@ -1,3 +1,36 @@
+
+body {
+  background: salmon;
+}
+
+/* for exercise cards */
+/* #chosen-exercises .ui-selecting { background: #FECA40; }
+#chosen-exercises .ui-selected { background: #F39814; color: white; } */
+#chosen-exercises {
+  margin: 0;
+  padding: 0;
+  width: 450px;
+}
+#chosen-exercises li {
+  list-style-type: none;
+  margin: 3px;
+  padding: 1px;
+  float: left;
+  width: 100px;
+  height: 80px;
+  font-size: 1em;
+  text-align: left;
+  background: gray;
+}
+
+.hide {
+    display: none;
+}
+
+.overlay {
+    -webkit-filter: brightness(50%);
+}
+=======
 /* [Object] Modal
  * =============================== */
  .modal {
@@ -139,3 +172,4 @@
     float: left;
     margin: 0 1em 1em 0;
   }
+
