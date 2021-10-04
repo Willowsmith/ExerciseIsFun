@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "https://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script> <!--the defer makes scripts run after page load-->
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" defer></script>                <!--this keeps all linked things in one place-->
@@ -95,10 +96,16 @@
                 <ul id="exercise-list" class="">                <!-- Going to present the exercises we can choose from with a scrollbar to the side -->
                     <li></li>                                   <!-- if exercise is clicked on it will change to indicate choice -->
                 </ul>
+
+            </div>
+            <label class="btn" for="modal-1" id="modal-add"></label>    <!-- There will be a close(X) button at top right of modal -->         <!-- when this button is clicked, modal closes and exercises(if any) are appended into "chosen-list" -->
+=======
             </div>      
             <button id="clearmodal-btn" class="">Clear Exercises</button>                                        <!-- There will be a close(X) button at top right of modal -->
             <button id="modal-add" class="">Submit Exercises</button>           <!-- when this button is clicked, modal closes and exercises(if any) are appended into "chosen-list" -->
+
         </section>
+        
     </main>  
     <footer>
         <!-- our names maybe? IDK something fun -->
