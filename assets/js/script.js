@@ -3,17 +3,14 @@ var lowerEl = $("#lower");
 var fullEl = $("#full");
 var createEl = $("#create");
 var typeWorkoutEl = $("#type-workout");
-var searchInput = $('#text-bar')
+var searchInput = $('#text-bar');
 var exerciseList;
 var test;
-<<<<<<< HEAD
 var upperBody;
 var lowerBody;
 
-=======
 var exEl = $('.ex');
 var chosenListEl = $('#chosen-list');
->>>>>>> dev
 
 // gets all data from API and saves it locally
 
@@ -101,9 +98,6 @@ fullEl.on('click', function() {
 $(function () {
     $('#chosen-list').sortable();
 });
-
-
-
 
 chosenListEl.on('mouseleave', '.ex', function(event) {   
     event.stopPropagation();

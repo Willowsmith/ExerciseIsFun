@@ -1,6 +1,5 @@
 
 body {
-<<<<<<< HEAD
     background: #525252;
 }
 h1,h2,h3,h4,p{
@@ -69,9 +68,6 @@ ul {
   li a:hover {
     background-color: #111;
   }
-=======
-  background: salmon;
-}
 
 /* for exercise cards */
 /* #chosen-exercises .ui-selecting { background: #FECA40; }
@@ -100,7 +96,6 @@ ul {
 .overlay {
     -webkit-filter: brightness(50%);
 }
-=======
 /* [Object] Modal
  * =============================== */
  .modal {
@@ -243,4 +238,3 @@ ul {
     margin: 0 1em 1em 0;
   }
 
->>>>>>> dev
