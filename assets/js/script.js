@@ -189,30 +189,44 @@ chosenListEl.on('click', '.reps', function() {
     test[$(this).data('pos')].reps = $(this).val();    
 });
 
-// Paige's stuff
 
-let filteredExerciseList = []
+//Paige's Stuff
+
+let searchFilteredList = [];
+let checkFilteredList = [];
+let equipFilteredList = [];
 // console.log(exerciseList)
 
-filteredExerciseList = exerciseList.filter(function(exercise) {
-  return (exercise.equipment.toLowerCase().indexOf('body weight') > -1) + 
-  (exercise.equipment.toLowerCase().indexOf('dumbbell') > -1) + 
-  (exercise.equipment.toLowerCase().indexOf('barbell') > -1) + 
-  (exercise.equipment.toLowerCase().indexOf('weighted') > -1);
+$("input:checkbox").on("change", event => {
+  console.log($(event.currentTarget).val())
+  
+  checkFilteredList = exerciseList.filter(function(exercise) {
+    return exercise.target.indexOf($(event.currentTarget).val()) > -1;
+  })
+  console.log(checkFilteredList)
+  filterByEquipment();
 })
 
-console.log(filteredExerciseList)
+function filterByEquipment() {
+  equipFilteredList = checkFilteredList.filter(function(exercise) {
+    return (exercise.equipment.toLowerCase().indexOf('body weight') > -1) + 
+    (exercise.equipment.toLowerCase().indexOf('dumbbell') > -1) + 
+    (exercise.equipment.toLowerCase().indexOf('barbell') > -1) + 
+    (exercise.equipment.toLowerCase().indexOf('weighted') > -1);
+  })
+  console.log(equipFilteredList)
+}
 
-let filteredList = [];
+
 // console.log(exerciseList);
 // console.log(exerciseList[3].name)
 
 $('#text-bar').on('keyup', event => {
     console.log($(event.currentTarget).val())
-    filteredList = filteredExerciseList.filter(function(exercise) {
+    searchFilteredList = equipFilteredList.filter(function(exercise) {
       return exercise.name.toLowerCase().indexOf($(event.currentTarget).val().toLowerCase()) > -1;
       })
-      console.log(filteredList)
+      console.log(searchFilteredList)
 })
 
 
