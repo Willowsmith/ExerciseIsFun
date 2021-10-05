@@ -12,6 +12,9 @@ var chosenListEl = $("#chosen-list");
 var exerciseListOjbect 
 var setsEl = $(".sets");
 var repsEl = $(".reps");
+var upperBodyDefault = ['dumbbell bench press', 'dumbbell biceps curl', 'dumbbell bent over row', 'dumbbell seated shoulder press', 'dumbbell seated triceps extension'];
+var lowerBodyDefault = ['dumbbell squat', 'dumbbell deadlift', 'walking lunge', 'barbell glute bridge', 'dumbbell standing calf raise'];
+var fullBodyDefault = ['dumbbell bench press', 'dumbbell deadlift', 'dumbbell bent over row', 'walking lunge', 'dumbbell push press'];
 
 // gets all data from API and saves it locally
 
@@ -50,7 +53,7 @@ localOrApi();
 // this is a test search returning exercises that meet the lised conditions
 
 function generateListByName(name) {
-//   test = [];
+
   for (i = 0; i < exerciseList.length; i++) {
     if (exerciseList[i].name === name) {
       test.push(exerciseList[i]);
@@ -101,11 +104,9 @@ upperEl.on("click", function () {
   fullEl.css("background-color", "");
   chosenListEl.html("");
   test=[];
-  generateListByName("dumbbell bench press");
-  generateListByName("dumbbell biceps curl");
-  generateListByName("dumbbell bent over row");
-  generateListByName("dumbbell seated shoulder press");
-  generateListByName("dumbbell seated triceps extension");
+  for (v=0; v < upperBodyDefault.length; v++) {
+      generateListByName(upperBodyDefault[v]);
+  };
   buildCardsFromList();
 });
 
@@ -114,6 +115,12 @@ lowerEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "darkgoldenrod");
   fullEl.css("background-color", "");
+  chosenListEl.html("");
+  test=[];
+  for (v=0; v < lowerBodyDefault.length; v++) {
+    generateListByName(lowerBodyDefault[v]);
+  };
+  buildCardsFromList();
 });
 
 fullEl.on("click", function () {
@@ -121,6 +128,12 @@ fullEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "darkgoldenrod");
+  chosenListEl.html("");
+  test=[];
+  for (v=0; v < fullBodyDefault.length; v++) {
+    generateListByName(fullBodyDefault[v]);
+  };
+  buildCardsFromList();
 });
 
 $(function () {
