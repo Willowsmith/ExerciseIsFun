@@ -12,6 +12,9 @@ var chosenListEl = $("#chosen-list");
 var exerciseListOjbect 
 var setsEl = $(".sets");
 var repsEl = $(".reps");
+var upperBodyDefault = ['dumbbell bench press', 'dumbbell biceps curl', 'dumbbell bent over row', 'dumbbell seated shoulder press', 'dumbbell seated triceps extension'];
+var lowerBodyDefault = ['dumbbell squat', 'dumbbell deadlift', 'walking lunge', 'barbell glute bridge', 'dumbbell standing calf raise'];
+var fullBodyDefault = ['dumbbell bench press', 'dumbbell deadlift', 'dumbbell bent over row', 'walking lunge', 'dumbbell push press'];
 
 // gets all data from API and saves it locally
 
@@ -101,11 +104,10 @@ upperEl.on("click", function () {
   fullEl.css("background-color", "");
   chosenListEl.html("");
   test=[];
-  generateListByName("dumbbell bench press");
-  generateListByName("dumbbell biceps curl");
-  generateListByName("dumbbell bent over row");
-  generateListByName("dumbbell seated shoulder press");
-  generateListByName("dumbbell seated triceps extension");
+  for (v=0; v < upperBodyDefault.length; v++) {
+      generateListByName(upperBodyDefault[v]);
+      console.log(v);
+  };
   buildCardsFromList();
 });
 
@@ -114,6 +116,10 @@ lowerEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "darkgoldenrod");
   fullEl.css("background-color", "");
+  chosenListEl.html("");
+  test=[];
+  generateListByName("dumbbell squat");
+  generateListByName("")
 });
 
 fullEl.on("click", function () {
@@ -121,6 +127,8 @@ fullEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "darkgoldenrod");
+  chosenListEl.html("");
+  test=[];
 });
 
 $(function () {
