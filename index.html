@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
-=======
-    <link rel = "stylesheet" href = "https://yui.yahooapis.com/pure/0.6.0/pure-min.css">
->>>>>>> dev
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script> <!--the defer makes scripts run after page load-->
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" defer></script>                <!--this keeps all linked things in one place-->
@@ -33,17 +30,12 @@
                           <!--MAIN  -->
       <main class="main">
         <section id="type-workout" class=""> 
-                              <!-- MVP TASK -->
+                              <!-- MVP TASK -->        
 
-            <button id="upper" class="pure-button"></button>               <!-- Once one of these are clicked they will change background color or something to indicate  -->
-            <button id="lower" class="pure-button"></button>               <!-- the choice. If another button is clicked the initial button will be changed back to normal  -->
-            <button id="full" class="pure-button"></button>                <!-- background and new button will change -->
-            <button id="create" class="pure-button"></button>              
-
-            <button id="create" class="">Create</button>              
-            <button id="upper" class="">Upper</button>               <!-- Once one of these are clicked they will change background color or something to indicate  -->
-            <button id="lower" class="">Lower</button>               <!-- the choice. If another button is clicked the initial button will be changed back to normal  -->
-            <button id="full" class="">Full</button>                <!-- background and new button will change -->
+            <button id="create" class="pure-button">Create</button>              
+            <button id="upper" class="pure-button">Upper</button>               <!-- Once one of these are clicked they will change background color or something to indicate  -->
+            <button id="lower" class="pure-button">Lower</button>               <!-- the choice. If another button is clicked the initial button will be changed back to normal  -->
+            <button id="full" class="pure-button">Full</button>                <!-- background and new button will change -->
 
         </section>
         <section id="time-workout" class="">                        <!-- NON-PRIORITY -->
@@ -65,8 +57,8 @@
         <section id="work-out-plan" class="">
             <div id="chosen-exercises" class="pure-g pure-u-1-3">                <!-- MVP -->
                 <ul id="chosen-list">                           <!-- Exercises will be added as 'cards' into this div using javascript and css -->
-                    
-                                                     <!-- cards will have drag and drop capabilities as well as an "X" in top right to remove them -->
+                                                                <!-- cards will have drag and drop capabilities as well as an "X" in top right to remove them -->
+ 
                 </ul>                                           <!-- There will be a default workout for upper, lower and full -->     
             </div>
             <div id="final-buttons" class="pure-g">                   <!-- MVP -->
@@ -141,7 +133,6 @@
                 <ul id="exercise-list" class="">                <!-- Going to present the exercises we can choose from with a scrollbar to the side -->
                     <li></li>                                   <!-- if exercise is clicked on it will change to indicate choice -->
                 </ul>
-<<<<<<< HEAD
 <!-- <<<<<<< HEAD -->
             </div>                                              <!-- There will be a close(X) button at top right of modal -->
             <button id="modal-add" class="pure-button"></button>           <!-- when this button is clicked, modal closes and exercises(if any) are appended into "chosen-list" -->
@@ -154,19 +145,6 @@
         
     </main> 
     
-=======
-
-            </div>
-            <label class="btn" for="modal-1" id="modal-add"></label>    <!-- There will be a close(X) button at top right of modal -->         <!-- when this button is clicked, modal closes and exercises(if any) are appended into "chosen-list" -->
-=======
-            </div>      
-            <button id="clearmodal-btn" class="">Clear Exercises</button>                                        <!-- There will be a close(X) button at top right of modal -->
-            <button id="modal-add" class="">Submit Exercises</button>           <!-- when this button is clicked, modal closes and exercises(if any) are appended into "chosen-list" -->
-
-        </section>
-        
-    </main>  
->>>>>>> dev
     <footer>
         <!-- our names maybe? IDK something fun -->
     </footer>
