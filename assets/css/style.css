@@ -1,43 +1,45 @@
 
 body {
-    <<<<<<< HEAD
-        background: #525252;
-    }
-    h1,h2,h3,h4,p{
-        color: white;
-        text-align: center;
-    }
-    
-    html, button, input, select, textarea,
-    .pure-g [class *= "pure-u"] {
-        /* Set your content font stack here: */
-        font-family: Georgia, Times, "Times New Roman", serif;
-    }
-    
-    /* Header */
-    .header{
-        background-color: #333;
+    background: #525252;
+}
+h1,h2,h3,h4,p{
+    color: white;
+    text-align: center;
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+/* Header */
+.header{
+    background-color: #333;
+text-align: center;
+font-size: 60px;
+color: white;
+padding: 50px;
+}
+
+
+.pure-g > div {
+    box-sizing: border-box;
+}
+
+
+           /* MAIN ID's */
+#type-workout{
+    text-align: center;
+    padding: 20px;
+}
+#time-workout{
     text-align: center;
     font-size: 60px;
     color: white;
     padding: 50px;
     }
-    
-    
-    .pure-g > div {
-        box-sizing: border-box;
-    }
-    
-    
-               /* MAIN ID's */
-    #type-workout{
-        text-align: center;
-        padding: 20px;
-    }
-    #time-workout{
-        text-align: center;
-        padding: 20px;
-    }
+
     #welcome-question{
         color: white;
         padding: 10px;
@@ -69,10 +71,7 @@ body {
       li a:hover {
         background-color: #111;
       }
-    =======
-      background: salmon;
-    }
-    
+  
     /* for exercise cards */
     /* #chosen-exercises .ui-selecting { background: #FECA40; }
     #chosen-exercises .ui-selected { background: #F39814; color: white; } */
@@ -100,7 +99,7 @@ body {
     .overlay {
         -webkit-filter: brightness(50%);
     }
-    =======
+
     /* [Object] Modal
      * =============================== */
      .modal {
@@ -242,8 +241,6 @@ body {
         float: left;
         margin: 0 1em 1em 0;
       }
-    
-    >>>>>>> dev
 
   .hide {
       display: none;

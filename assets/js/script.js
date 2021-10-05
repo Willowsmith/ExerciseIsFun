@@ -145,3 +145,13 @@ chosenListEl.on('click', '.sets', function() {
 chosenListEl.on('click', '.reps', function() {
     test[$(this).data('pos')].reps = $(this).val();    
 });
+
+
+$('#text-bar').on('keyup', event => {
+    $(event.currentTarget)
+})
+
+
+
+
+
