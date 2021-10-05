@@ -53,7 +53,7 @@ localOrApi();
 // this is a test search returning exercises that meet the lised conditions
 
 function generateListByName(name) {
-//   test = [];
+
   for (i = 0; i < exerciseList.length; i++) {
     if (exerciseList[i].name === name) {
       test.push(exerciseList[i]);
@@ -106,7 +106,6 @@ upperEl.on("click", function () {
   test=[];
   for (v=0; v < upperBodyDefault.length; v++) {
       generateListByName(upperBodyDefault[v]);
-      console.log(v);
   };
   buildCardsFromList();
 });
@@ -118,8 +117,10 @@ lowerEl.on("click", function () {
   fullEl.css("background-color", "");
   chosenListEl.html("");
   test=[];
-  generateListByName("dumbbell squat");
-  generateListByName("")
+  for (v=0; v < lowerBodyDefault.length; v++) {
+    generateListByName(lowerBodyDefault[v]);
+  };
+  buildCardsFromList();
 });
 
 fullEl.on("click", function () {
@@ -129,6 +130,10 @@ fullEl.on("click", function () {
   fullEl.css("background-color", "darkgoldenrod");
   chosenListEl.html("");
   test=[];
+  for (v=0; v < fullBodyDefault.length; v++) {
+    generateListByName(fullBodyDefault[v]);
+  };
+  buildCardsFromList();
 });
 
 $(function () {
