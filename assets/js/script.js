@@ -16,6 +16,25 @@ var upperBodyDefault = ['dumbbell bench press', 'dumbbell biceps curl', 'dumbbel
 var lowerBodyDefault = ['dumbbell squat', 'dumbbell deadlift', 'walking lunge', 'barbell glute bridge', 'dumbbell standing calf raise'];
 var fullBodyDefault = ['dumbbell bench press', 'dumbbell deadlift', 'dumbbell bent over row', 'walking lunge', 'dumbbell push press'];
 
+// retrieves a quote and puts it on the top of the main page for now
+
+function getQuote() {
+  fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    var randomQuote=Math.floor(Math.random()*1643);
+    var author
+    if (!data[randomQuote].author) {
+      author = 'Unknown';
+    } else {
+      author = data[randomQuote].author;
+    }
+    $('.main').prepend('<div style="font-style:italic;width:100%;height:auto;">' + data[randomQuote].text + '<div style="margin-left:40%;font-style:normal;"> -' + author + '</div></div>');
+  });
+}
+
 // gets all data from API and saves it locally
 
 function getAllExercises() {
@@ -49,6 +68,7 @@ function localOrApi() {
 }
 
 localOrApi();
+getQuote();
 
 // this is a test search returning exercises that meet the lised conditions
 
@@ -63,6 +83,8 @@ function generateListByName(name) {
     }
   }
 }
+
+// builds exercise cards and places them in the main page
 
 function buildCardsFromList() {
     for (i = 0; i < test.length; i++) {
@@ -136,9 +158,13 @@ fullEl.on("click", function () {
   buildCardsFromList();
 });
 
+// make exercise cards a sortable list 
+
 $(function () {
   $("#chosen-list").sortable();
 });
+
+// open and close the GIF
 
 chosenListEl.on("click", ".sidebar", function (event) {
   event.stopPropagation();
@@ -146,10 +172,14 @@ chosenListEl.on("click", ".sidebar", function (event) {
   
 });
 
+// remove the card ele and remove exercise from test array
+
 chosenListEl.on('click', 'button', function() {
     test.splice($(this).data('pos'), 1);
     $(this).parent().remove();
 });
+
+// both of these listen for clicks on the reps and sets and then writes to the test array
 
 chosenListEl.on('click', '.sets', function() {
     test[$(this).data('pos')].sets = $(this).val();  
@@ -158,6 +188,9 @@ chosenListEl.on('click', '.sets', function() {
 chosenListEl.on('click', '.reps', function() {
     test[$(this).data('pos')].reps = $(this).val();    
 });
+
+
+//Paige's Stuff
 
 let searchFilteredList = [];
 let checkFilteredList = [];
