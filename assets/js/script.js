@@ -155,10 +155,29 @@ chosenListEl.on('click', '.reps', function() {
 });
 
 
-$('#text-bar').on('keyup', event => {
-    $(event.currentTarget)
+let filteredExerciseList = []
+// console.log(exerciseList)
+
+filteredExerciseList = exerciseList.filter(function(exercise) {
+  return (exercise.equipment.toLowerCase().indexOf('body weight') > -1) + 
+  (exercise.equipment.toLowerCase().indexOf('dumbbell') > -1) + 
+  (exercise.equipment.toLowerCase().indexOf('barbell') > -1) + 
+  (exercise.equipment.toLowerCase().indexOf('weighted') > -1);
 })
 
+console.log(filteredExerciseList)
+
+let filteredList = [];
+// console.log(exerciseList);
+// console.log(exerciseList[3].name)
+
+$('#text-bar').on('keyup', event => {
+    console.log($(event.currentTarget).val())
+    filteredList = filteredExerciseList.filter(function(exercise) {
+      return exercise.name.toLowerCase().indexOf($(event.currentTarget).val().toLowerCase()) > -1;
+      })
+      console.log(filteredList)
+})
 
 
 
