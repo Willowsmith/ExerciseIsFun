@@ -16,109 +16,70 @@
 <!-- NP = NON-PRIORITY -->
 </head>
 <body class="">
-    
-    <header class="header">Workout Planner</header>                   <!-- Some sort of Jumbotron? -->
-    
-    <!-- Navbar -->
-<!-- 
-    <ul>
-        <li><a class="active" href="#home">Full</a></li>
-        <li><a href="#news">Lower</a></li>
-        <li><a href="#contact">Upper</a></li>
-        <li><a href="#about">Create</a></li>
-      </ul> -->
-                          <!--MAIN  -->
+    <header class="header">Workout Planner</header>                   
       <main class="main">
-        <section id="type-workout" class=""> 
-                              <!-- MVP TASK -->        
-
-            <button id="create" class="pure-button">Create</button>              
-            <button id="upper" class="pure-button">Upper</button>               <!-- Once one of these are clicked they will change background color or something to indicate  -->
-            <button id="lower" class="pure-button">Lower</button>               <!-- the choice. If another button is clicked the initial button will be changed back to normal  -->
-            <button id="full" class="pure-button">Full</button>                <!-- background and new button will change -->
-
-        </section>
-        <section id="time-workout" class="">                        <!-- NON-PRIORITY -->
-                <button id="min-20" class="pure-button"></button>              <!-- This section appears after one of the typeWorkout buttons have been clicked -->
-                <button id="min-40" class="pure-button"></button>              <!-- Same as with above, only one button can be clicked at a time -->   
-                <button id="min-60" class="pure-button"></button>              <!-- This section will determine reps and sets recommendations of the exercises -->
-        </section>
-        <section id="workout-questions" class="">    
-            <div id="welcome-question" class="pure-g pure-u-1-3">  Welcome to The Workout Plan. We are a fitness and training
-                center that focuses on pushing you to your absolute limit!
-               </div>               <!-- Display visible on start, hides once type of workout is picked -->
-                <h2 class="">Welcome!</h2> 
-                <p class="">Choose a Setting Above to Get Started!</p>
-            </div>
-            <div id="length-question" class="pure-g pure-u-1-3">                     <!-- NP: Display hidden on start, visible when type of workout is picked,  -->
-                <p class="pure-g pure-u-1-3">How long do you want your workout to be?</p> <!-- hidden again when timeWorkOut is picked -->
-            </div>  
+        <section id="workout-questions" class="pure-g pure-u-1">    
+            <h2>Welcome to The Workout Plan.</h2>  
+            <section id="type-workout" class=""> 
+                <!-- MVP TASK -->        
+                <button id="create" class="pure-button">Create</button>              
+                <button id="upper" class="pure-button">Upper</button>               
+                <button id="lower" class="pure-button">Lower</button>               
+                <button id="full" class="pure-button">Full</button>                
+            </section>
+            <h3>Choose a Setting Above to Get Started!</h3>
         </section>
         <section id="work-out-plan" class="">
-            <div id="chosen-exercises" class="pure-g pure-u-1-3">                <!-- MVP -->
-                <ul id="chosen-list">                           <!-- Exercises will be added as 'cards' into this div using javascript and css -->
-                                                                <!-- cards will have drag and drop capabilities as well as an "X" in top right to remove them -->
- 
-                </ul>                                           <!-- There will be a default workout for upper, lower and full -->     
+            <div id="chosen-exercises" class="pure-g pure-u-1-3">               
+                <ul id="chosen-list">                           
+                    <!-- Exercises placed here using JS -->
+                </ul>                                          
             </div>
-            <div id="final-buttons" class="pure-g">                   <!-- MVP -->
-                <button id="clearbtn" class="">Clear</button>                                 <!-- Removes all exercise options and choices clicked. Reverts back to the starting page -->
-                <button id="addbtn button-secondary pure-button" class="">Add</button>       <!-- modal pops up with options to add a single or multiple new exercises -->
-                <button id="submitbtn button-secondary pure-button" class="">Submit</button> <!-- Hides "type-workout", "time-workout" and "workout-questions" for a clean look. saves to local -->
+            <div id="final-buttons" class="pure-g pure-u-1">                   <!-- MVP -->
+                <button id="clearbtn" class="pure-button">Clear</button>           <!-- Removes all exercise options and choices clicked. Reverts back to the starting page -->
+                <button id="addbtn" class="button-secondary pure-button">Add</button>       <!-- modal pops up with options to add a single or multiple new exercises -->
+                <button id="submitbtn" class="button-secondary pure-button">Submit</button> <!-- Hides "type-workout", "time-workout" and "workout-questions" for a clean look. saves to local -->
             </div>                                              <!-- NP: Bodybuilding quote appears at top when submit is clicked perhaps? -->
         </section>
 
         <!-- MODAL SECTION -->                                  <!-- MVP -->
-        <section id="exercise-modal" class="">                  <!-- two columns in modal, first column is going to be maybe 1/4-1/3 of modal, 2 is 2/3-3/4 -->
-            <form id="search-bar" class="">                     <!-- will be on left side of modal -->
-                <input type="text" id="text-bar" class="">      <!-- how about this? good reference https://www.w3schools.com/howto/howto_js_filter_lists.asp -->
-                <div id="filter-bar" class="pure-g pure-u-1-3">                  <!-- maybe want to look into thishttps://www.w3schools.com/howto/howto_js_filter_elements.asp-->
-                    <div id="equipment-types">
-                        <div id="body-weight"></div>
-                        <div id="dumb-bells"></div>
-                        <div id="barbells"></div>
-                        <div id="machine"></div>
-                    </div>
-                    <div id="body-parts" class="pure-g pure-u-1-3">
-                        <div id="upper-filter" class=""></div>  <!-- May need to create arrays of what exercises are upper/lower/full in order to sort this -->
-                        <div id="lower-filter" class=""></div>
-                        <div id="lowback/abs-filter" class=""></div> 
-                    </div>                    <!-- NP: Gotta check if this is available with API or manually create list -->    
-                    <div id="muscle-types" class="pure-g pure-u-1-3">
-
-                        <label for="pecs"><input class="modal-state modal-1" id="pecs" value="pectorals" type="checkbox" />Pecs</label>
-                        <label for="biceps"><input class="modal-state modal-1" class="modal-1" id="biceps" value="biceps" type="checkbox" />Biceps</label>
-                        <label for="triceps"><input class="modal-state modal-1" class="modal-1" id="triceps" value="triceps" type="checkbox" />Triceps</label>
-                        <label for="delts"><input class="modal-state modal-1" class="modal-1" id="shoulders" value="delts" type="checkbox" />Shoulders</label>
-                        <label for="lats"><input class="modal-state modal-1" class="modal-1" id="lats" value="lats" type="checkbox" />Lats</label>
-                        <label for="traps"><input class="modal-state modal-1" class="modal-1" id="traps" value="traps" type="checkbox" />Traps</label>
-
-
-                        <label for="quads"><input class="modal-state modal-1" id="quads" value="quads" type="checkbox" />Quads</label>
-                        <label for="hamstrings"><input class="modal-state modal-1" id="hamstrings" value="hamstrings" type="checkbox" />Hamstrings</label>
-                        <label for="glutes"><input class="modal-state modal-1" id="glutes" value="glutes" type="checkbox" />Glutes</label>
-                        <label for="calves"><input class="modal-state modal-1" id="calves" value="calves" type="checkbox" />Calves</label>
-                        
-                        <label for="abs"><input class="modal-state modal-1" id="abs" value="abs" type="checkbox" />Abs</label>
-                        <label for="spine"><input class="modal-state modal-1" id="spine" value="spine" type="checkbox" />Spine</label>
-                    </div>        
-                </div>                                          
-                <div id="filter-btns" class="">
-                    <button id="next-btn" class="">Next</button>
-                    <button id="back-btn" class="">Back</button>
-                    <button id="reset-btn" class="">Reset Filters</button>
+        <div class = "container">
+            <section id="exercise-modal" class="pure-g">                  
+                <form id="search-bar" class="pure-g pure-u-1-3">                    
+                    <input type="text" id="text-bar" class=""> 
+                    <h4>Filter Muscles</h4>
+                        <div id="muscle-types" class="pure-g pure-u-1">
+                            <input type="radio" name="muscles" class="" id="pecs" value="pectorals" checked/><label for="pecs">Pecs</label> <br>
+                            <input type="radio" name="muscles" class="" id="biceps" value="biceps"/><label for="biceps">Biceps</label> <br>
+                            <input type="radio" name="muscles" class="" id="triceps" value="triceps"/><label for="triceps">Triceps</label> <br>
+                            <input type="radio" name="muscles" class="" id="shoulders" value="delts"/><label for="delts">Shoulders</label> <br>
+                            <input type="radio" name="muscles" class="" id="lats" value="lats"/><label for="lats">Lats</label> <br>
+                            <input type="radio" name="muscles" class="" id="traps" value="traps"/><label for="traps">Traps</label> <br>
+                            <input type="radio" name="muscles" class="" id="quads" value="quads"/><label for="quads">Quads</label> <br>
+                            <input type="radio" name="muscles" class="" id="hamstrings" value="hamstrings"/><label for="hamstrings">Hamstrings</label> <br>
+                            <input type="radio" name="muscles" class="" id="glutes" value="glutes"/><label for="glutes">Glutes</label><br>
+                            <input type="radio" name="muscles" class="" id="calves" value="calves"/><label for="calves">Calves</label> <br>
+                            <input type="radio" name="muscles"class="" id="abs" value="abs" /><label for="abs">Abs</label> <br>
+                            <input type="radio" name="muscles"class="" id="spine" value="spine" /><label for="spine">Back</label> <br>
+                        </div>                                                
+                </form>
+                <div id="exercises" class="pure-u-2-3">                       
+                    <h5>Exercises</h5>
+                    <ul id="exercise-list" class="">                <!-- Going to present the exercises we can choose from with a scrollbar to the side --><!-- if exercise is clicked on it will change to indicate choice -->
+                    </ul>
+                </div>      
+                <div id= "modal-btns">
+                    <!-- <button id="reset-btn" class="">Reset Filters</button> -->
+                    <button id="clearmodal-btn" class="">Clear Exercises</button>                                        
+                    <button id="modal-add" class="">Submit Exercises</button>           
+                    <button id="exit" class="">Exit</button> 
                 </div>
-
-            </form>
-            <div id="exercises" class="pure-g pure-u-1-3">                       <!-- MVP: will be on right side of modal -->
-                <ul id="exercise-list" class="">                <!-- Going to present the exercises we can choose from with a scrollbar to the side -->
-                    <li></li>                                   <!-- if exercise is clicked on it will change to indicate choice -->
-                </ul>
-            </div>      
-            <button id="clearmodal-btn" class="">Clear Exercises</button>                                        <!-- There will be a close(X) button at top right of modal -->
-            <button id="modal-add" class="">Submit Exercises</button>           <!-- when this button is clicked, modal closes and exercises(if any) are appended into "chosen-list" -->
-        </section>
+            </section>
+        </div>
     <footer>
+        <br>
+        <br>
+        <br>
         <!-- our names maybe? IDK something fun -->
     </footer>
     

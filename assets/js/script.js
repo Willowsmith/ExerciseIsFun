@@ -201,43 +201,70 @@ chosenListEl.on('click', '.reps', function() {
 
 //Paige's Stuff
 
-let searchFilteredList = [];
-let checkFilteredList = [];
+// We're only using exercises included in the list (equipFilteredList). When the modal opens I want to be creating a 'chosen list' based off of the search bar, checked boxes or both. 
 let equipFilteredList = [];
-// console.log(exerciseList)
-
-$("input:checkbox").on("change", event => {
-  console.log($(event.currentTarget).val())
-  
-  checkFilteredList = exerciseList.filter(function(exercise) {
-    return exercise.target.indexOf($(event.currentTarget).val()) > -1;
-  })
-  console.log(checkFilteredList)
-  filterByEquipment();
-})
 
 function filterByEquipment() {
-  equipFilteredList = checkFilteredList.filter(function(exercise) {
+  equipFilteredList = exerciseList.filter(function(exercise) {
     return (exercise.equipment.toLowerCase().indexOf('body weight') > -1) + 
     (exercise.equipment.toLowerCase().indexOf('dumbbell') > -1) + 
     (exercise.equipment.toLowerCase().indexOf('barbell') > -1) + 
     (exercise.equipment.toLowerCase().indexOf('weighted') > -1);
   })
-  console.log(equipFilteredList)
+  // console.log(equipFilteredList)
 }
 
+let searchFilteredList = [];
+let checkFilteredList = [];
+let finalList = [];
 
-// console.log(exerciseList);
-// console.log(exerciseList[3].name)
-
-$('#text-bar').on('keyup', event => {
-    console.log($(event.currentTarget).val())
-    searchFilteredList = equipFilteredList.filter(function(exercise) {
-      return exercise.name.toLowerCase().indexOf($(event.currentTarget).val().toLowerCase()) > -1;
-      })
-      console.log(searchFilteredList)
+$("input:radio").on("change", event => {
+  filterByEquipment();
+  
+  checkFilteredList = equipFilteredList.filter(function(i) {
+    return i.target.indexOf($(event.currentTarget).val()) > -1;
+  })
+  console.log(checkFilteredList)
+  finalList = checkFilteredList.filter(function(e) {
+    return e.name.toLowerCase().indexOf($('#text-bar').val().toLowerCase()) > -1
+  })
+  console.log(finalList)
 })
 
+$('#text-bar').on('keyup', event => {
+  filterByEquipment();
+  searchFilteredList = equipFilteredList.filter(function(i) {
+    return i.name.toLowerCase().indexOf($(event.currentTarget).val().toLowerCase()) > -1;
+  })
+  console.log(searchFilteredList)
+  if ($('input:radio:checked')) {
+    finalList = searchFilteredList.filter(function(e) {
+      return e.target.indexOf($('input:radio:checked').val()) > -1
+    })
+  } else {
+    finalList = searchFilteredList;
+  }
+  console.log(finalList)
+})
 
+//modal stuff
+$('#exercise-modal').addClass('hide');
+  $('#create').on('click', function(e) {
+    e.preventDefault();
+    $('.container').addClass('modal');
+    $('#exercise-modal').removeClass('hide')
+    $('#exercise-modal').addClass('show');
+  });
+  $('#addbtn').on('click', function(e) {
+    e.preventDefault();
+    $('.container').addClass('modal');
+    $('#exercise-modal').removeClass('hide')
+    $('#exercise-modal').addClass('show');
+  });
+ $('#exit').on ('click', function(){
+   $('.container').removeClass('modal');
+   $('#exercise-modal').removeClass('show');
+   $('#exercise-modal').addClass('hide');
+ }); 
 
 
