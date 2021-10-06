@@ -36,7 +36,7 @@
                 </ul>                                          
             </div>
             <div id="final-buttons" class="pure-g pure-u-1">                   <!-- MVP -->
-                <button id="clearbtn" class="pure-button">Clear</button>                                 <!-- Removes all exercise options and choices clicked. Reverts back to the starting page -->
+                <button id="clearbtn" class="pure-button">Clear</button>           <!-- Removes all exercise options and choices clicked. Reverts back to the starting page -->
                 <button id="addbtn" class="button-secondary pure-button">Add</button>       <!-- modal pops up with options to add a single or multiple new exercises -->
                 <button id="submitbtn" class="button-secondary pure-button">Submit</button> <!-- Hides "type-workout", "time-workout" and "workout-questions" for a clean look. saves to local -->
             </div>                                              <!-- NP: Bodybuilding quote appears at top when submit is clicked perhaps? -->
@@ -44,12 +44,10 @@
 
         <!-- MODAL SECTION -->                                  <!-- MVP -->
         <div class = "container">
-            <section id="exercise-modal" class="pure-g">                  <!-- two columns in modal, first column is going to be maybe 1/4-1/3 of modal, 2 is 2/3-3/4 -->
-                <form id="search-bar" class="pure-g pure-u-1-3">                     <!-- will be on left side of modal -->
-                    <input type="text" id="text-bar" class="">      <!-- how about this? good reference https://www.w3schools.com/howto/howto_js_filter_lists.asp -->
+            <section id="exercise-modal" class="pure-g">                  
+                <form id="search-bar" class="pure-g pure-u-1-3">                    
+                    <input type="text" id="text-bar" class=""> 
                     <h4>Filter Muscles</h4>
-                    <div id="filter-bar" class=""> <!-- maybe want to look into thishttps://www.w3schools.com/howto/howto_js_filter_elements.asp-->
-                            <!-- NP: Gotta check if this is available with API or manually create list -->    
                         <div id="muscle-types" class="pure-g pure-u-1">
                             <input type="checkbox" class="" id="pecs" value="pectorals"/><label for="pecs">Pecs</label> <br>
                             <input type="checkbox" class="" id="biceps" value="biceps"/><label for="biceps">Biceps</label> <br>
@@ -57,30 +55,26 @@
                             <input type="checkbox" class="" id="shoulders" value="delts"/><label for="delts">Shoulders</label> <br>
                             <input type="checkbox" class="" id="lats" value="lats"/><label for="lats">Lats</label> <br>
                             <input type="checkbox" class="" id="traps" value="traps"/><label for="traps">Traps</label> <br>
-
                             <input type="checkbox" class="" id="quads" value="quads"/><label for="quads">Quads</label> <br>
                             <input type="checkbox" class="" id="hamstrings" value="hamstrings"/><label for="hamstrings">Hamstrings</label> <br>
                             <input type="checkbox" class="" id="glutes" value="glutes"/><label for="glutes">Glutes</label><br>
                             <input type="checkbox" class="" id="calves" value="calves"/><label for="calves">Calves</label> <br>
                             
                             <input type="checkbox"class="" id="abs" value="abs" /><label for="abs">Abs</label> <br>
-                            <input type="checkbox"class="" id="spine" value="spine" /><label for="spine">Spine</label>
-                        </div>        
-                    </div>                                          
-                    <div id="filter-btns" class="">
-                        
-                    </div>
+                            <input type="checkbox"class="" id="spine" value="spine" /><label for="spine">Back</label>
+                        </div>                                                
                 </form>
-                <div id="exercises" class="pure-u-2-3">                       <!-- MVP: will be on right side of modal -->
+                <div id="exercises" class="pure-u-2-3">                       
                     <h5>Exercises</h5>
-                    <ul id="exercise-list" class="">                <!-- Going to present the exercises we can choose from with a scrollbar to the side -->
-                        <li></li>                                   <!-- if exercise is clicked on it will change to indicate choice -->
+                    <ul id="exercise-list" class="">                <!-- Going to present the exercises we can choose from with a scrollbar to the side --><!-- if exercise is clicked on it will change to indicate choice -->
                     </ul>
                 </div>      
-                <button id="reset-btn" class="">Reset Filters</button>
-                <button id="clearmodal-btn" class="">Clear Exercises</button>                                        <!-- There will be a close(X) button at top right of modal -->
-                <button id="modal-add" class="">Submit Exercises</button>           <!-- when this button is clicked, modal closes and exercises(if any) are appended into "chosen-list" -->
-                <button id="exit" class="">Exit</button> 
+                <div id= "modal-btns">
+                    <!-- <button id="reset-btn" class="">Reset Filters</button> -->
+                    <button id="clearmodal-btn" class="">Clear Exercises</button>                                        
+                    <button id="modal-add" class="">Submit Exercises</button>           
+                    <button id="exit" class="">Exit</button> 
+                </div>
             </section>
         </div>
     <footer>

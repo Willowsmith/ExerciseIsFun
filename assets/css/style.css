@@ -106,13 +106,11 @@ li a:hover {
 
 #search-bar {
   width: 30%;
-  border-right: 1px solid black
+  border-right: 1px solid black;
   /* padding: 5px */
+  text-align: left;
 }
 
-#filter-bar {
-
-}
 
 h4 {
   color: #333;
@@ -124,7 +122,11 @@ h4 {
 #text-bar {
   height: 20px;
   margin: 5px 5px;
-  width: auto;
+  width: 80%;
+}
+
+#muscle-types {
+  text-align:left;
 }
 
 #exercises {
@@ -138,6 +140,9 @@ h5 {
   margin: 0px 10px;
 }
 
+#modal-btns {
+  margin-top: 10px;
+}
 
 
 

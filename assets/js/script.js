@@ -219,22 +219,24 @@ let checkFilteredList = [];
 
 
 $("input:checkbox").on("change", event => {
-  console.log($(event.currentTarget).val())
-  
+  // console.log($(event.currentTarget).val())
+  filterByEquipment();
   checkFilteredList = equipFilteredList.filter(function(exercise) {
     return exercise.target.indexOf($(event.currentTarget).val()) > -1;
   })
   console.log(checkFilteredList)
-  filterByEquipment();
 })
 
 $('#text-bar').on('keyup', event => {
-  console.log($(event.currentTarget).val())
+  // console.log($(event.currentTarget).val())
+  filterByEquipment();
   searchFilteredList = equipFilteredList.filter(function(exercise) {
     return exercise.name.toLowerCase().indexOf($(event.currentTarget).val().toLowerCase()) > -1;
   })
   console.log(searchFilteredList)
 })
+
+
 
 
 //modal stuff
