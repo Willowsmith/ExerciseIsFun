@@ -228,6 +228,7 @@ $("input:radio").on("change", event => {
   finalList = checkFilteredList.filter(function(e) {
     return e.name.toLowerCase().indexOf($('#text-bar').val().toLowerCase()) > -1
   })
+  $(event.currentTarget).toggleClass('active')
   console.log(finalList)
 })
 
@@ -266,5 +267,11 @@ $('#exercise-modal').addClass('hide');
    $('#exercise-modal').removeClass('show');
    $('#exercise-modal').addClass('hide');
  }); 
+
+ $('#revertbtn').addClass('hide');
+ $('submitbtn').on("click", function () {
+  $('#final-buttons').addClass('hide');
+  $('#revertbtn').removeClass('hide');
+});
 
 
