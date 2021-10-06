@@ -47,7 +47,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #333;
+  /* background-color: #333; */
 }
       
 /* li {
@@ -81,6 +81,7 @@ li a:hover {
   border: 2px solid black;
   position: relative;
   border-radius: 10px;
+  
 }
 
 .container {
@@ -98,6 +99,7 @@ li a:hover {
   background-color: rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   z-index: 5;
+  
 }
 
 .hide{
@@ -133,7 +135,19 @@ h4 {
 }
 
 #exercises {
-  width: 60%;
+  width: 68%;
+  height: 300px;
+  overflow: scroll;
+  margin-top: 20px;
+  padding-left: 5px;
+}
+#exercises li {
+ text-align: left;
+}
+
+#exercise-list li {
+  border-bottom: 1px black solid;
+
 }
 
 h5 {
@@ -147,27 +161,6 @@ h5 {
   margin-top: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* below is for the exercise cards */
 
 #chosen-list { 
@@ -175,8 +168,9 @@ h5 {
   border-radius: 10px; 
   list-style-type: none; 
   margin: 0; 
-  padding: 10px; 
+  /* padding: ;  */
   width: 100%; 
+  
 }
 
 #chosen-list li { 
@@ -185,9 +179,10 @@ h5 {
   padding: 0; 
   float:none; 
   position: relative; 
-  margin: 0; 
+  /* margin: 3px;  */
   height: auto; 
-  width: 100%;
+  display: inline-block;
+  overflow: wrap;
 }
 
 #chosen-list p {
@@ -204,7 +199,7 @@ h5 {
 }
   
 #chosen-exercises {
-  width: 50%; 
+  width: 100%; 
   margin: 0; 
   padding: 0;
 }
