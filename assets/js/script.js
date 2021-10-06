@@ -5,7 +5,7 @@ var createEl = $("#create");
 var typeWorkoutEl = $("#type-workout");
 var searchInput = $("#text-bar");
 var exerciseList;
-var test=[];
+var currentWorkoutList=[];
 var upperBody;
 var lowerBody;
 var chosenListEl = $("#chosen-list");
@@ -18,7 +18,7 @@ var lowerBodyDefault = ['dumbbell squat', 'dumbbell deadlift', 'walking lunge', 
 var fullBodyDefault = ['dumbbell bench press', 'dumbbell deadlift', 'dumbbell bent over row', 'walking lunge', 'dumbbell push press'];
 
 // retrieves a quote and puts it on the top of the main page for now
-
+ 
 function getQuote() {
   fetch("https://type.fit/api/quotes")
   .then(function(response) {
@@ -71,16 +71,16 @@ function localOrApi() {
 localOrApi();
 getQuote();
 
-// this is a test search returning exercises that meet the lised conditions
+// this is a search returning exercises that meet the name
 
 function generateListByName(name) {
 
   for (i = 0; i < exerciseList.length; i++) {
     if (exerciseList[i].name === name) {
-      test.push(exerciseList[i]);
-      var temp = test.length - 1;
-      test[temp].reps = 8;
-      test[temp].sets = 3;
+      currentWorkoutList.push(exerciseList[i]);
+      var temp = currentWorkoutList.length - 1;
+      currentWorkoutList[temp].reps = 8;
+      currentWorkoutList[temp].sets = 3;
     }
   }
 }
@@ -88,8 +88,8 @@ function generateListByName(name) {
 // builds exercise cards and places them in the main page
 
 function buildCardsFromList() {
-    for (i = 0; i < test.length; i++) {
-          var pic = test[i].gifUrl;
+    for (i = 0; i < currentWorkoutList.length; i++) {
+          var pic = currentWorkoutList[i].gifUrl;
           chosenListEl.append(
             '<li class="ex ui-state-default">' + 
             '<button data-pos="' + i + '">X</button>' + 
@@ -100,13 +100,13 @@ function buildCardsFromList() {
             // '<img class="hide" style=width:100%;height:auto;" src="' +
             // pic + '"></div>' +
             '<div class="content pure-u-2-3">' +
-            '<p>Name: ' + test[i].name + '</p>' +
-            '<p>Muscle target: ' + test[i].target + '</p>' +
+            '<p>Name: ' + currentWorkoutList[i].name + '</p>' +
+            '<p>Muscle target: ' + currentWorkoutList[i].target + '</p>' +
             '<p>Sets: ' + 
-            '<input type="number" data-pos="' + i + '" class="sets" min="1" value="' + test[i].sets + '"></p>' +
+            '<input type="number" data-pos="' + i + '" class="sets" min="1" value="' + currentWorkoutList[i].sets + '"></p>' +
             '<p>Reps: ' +
-            '<input type="number" data-pos="' + i + '" class="reps" min="1" value="' + test[i].reps + '"></p>' +
-            '<p>Equipment: ' + test[i].equipment + '</p>' +
+            '<input type="number" data-pos="' + i + '" class="reps" min="1" value="' + currentWorkoutList[i].reps + '"></p>' +
+            '<p>Equipment: ' + currentWorkoutList[i].equipment + '</p>' +
             '</div></div></li>')
         
     }
@@ -127,7 +127,7 @@ upperEl.on("click", function () {
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "");
   chosenListEl.html("");
-  test=[];
+  currentWorkoutList=[];
   for (v=0; v < upperBodyDefault.length; v++) {
       generateListByName(upperBodyDefault[v]);
   };
@@ -140,7 +140,7 @@ lowerEl.on("click", function () {
   lowerEl.css("background-color", "darkgoldenrod");
   fullEl.css("background-color", "");
   chosenListEl.html("");
-  test=[];
+  currentWorkoutList=[];
   for (v=0; v < lowerBodyDefault.length; v++) {
     generateListByName(lowerBodyDefault[v]);
   };
@@ -153,7 +153,7 @@ fullEl.on("click", function () {
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "darkgoldenrod");
   chosenListEl.html("");
-  test=[];
+  currentWorkoutList=[];
   for (v=0; v < fullBodyDefault.length; v++) {
     generateListByName(fullBodyDefault[v]);
   };
@@ -172,7 +172,7 @@ chosenListEl.on("click", ".gif", function () {
   
   var imgUrlPos = $(this).data('pos')
   if (!imgUrlToggle) {
-    $(this).attr('src', test[imgUrlPos].gifUrl);
+    $(this).attr('src', currentWorkoutList[imgUrlPos].gifUrl);
     imgUrlToggle=true;
   } else {
     $(this).attr('src', './assets/images/placeholder.png');
@@ -181,21 +181,21 @@ chosenListEl.on("click", ".gif", function () {
   
 });
 
-// remove the card ele and remove exercise from test array
+// remove the card ele and remove exercise from currentWorkoutList array
 
 chosenListEl.on('click', 'button', function() {
-    test.splice($(this).data('pos'), 1);
+  currentWorkoutList.splice($(this).data('pos'), 1);
     $(this).parent().remove();
 });
 
-// both of these listen for clicks on the reps and sets and then writes to the test array
+// both of these listen for clicks on the reps and sets and then writes to the currentWorkoutList array
 
 chosenListEl.on('click', '.sets', function() {
-    test[$(this).data('pos')].sets = $(this).val();  
+  currentWorkoutList[$(this).data('pos')].sets = $(this).val();  
 });
 
 chosenListEl.on('click', '.reps', function() {
-    test[$(this).data('pos')].reps = $(this).val();    
+  currentWorkoutList[$(this).data('pos')].reps = $(this).val();    
 });
 
 
