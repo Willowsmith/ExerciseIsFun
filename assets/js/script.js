@@ -128,6 +128,7 @@ upperEl.on("click", function () {
   upperEl.css("background-color", "darkgoldenrod");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "");
+  $('#type-workout').addClass('hide');
   $('#final-buttons').removeClass('hide');
   $('h3').addClass('hide')
   chosenListEl.html("");
@@ -143,6 +144,7 @@ lowerEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "darkgoldenrod");
   fullEl.css("background-color", "");
+  $('#type-workout').addClass('hide');
   $('#final-buttons').removeClass('hide');
   $('h3').addClass('hide')
   chosenListEl.html("");
@@ -158,6 +160,9 @@ fullEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "darkgoldenrod");
+  $('#type-workout').addClass('hide');
+  $('#final-buttons').removeClass('hide');
+  $('h3').addClass('hide')
   chosenListEl.html("");
   currentWorkoutList=[];
   for (v=0; v < fullBodyDefault.length; v++) {
@@ -167,18 +172,26 @@ fullEl.on("click", function () {
 });
 
 $('#submitbtn').on("click", function () {
-  $('h2').
+  $('h2').addClass('hide');
   $('#type-workout').addClass('hide');
   $('#final-buttons').addClass('hide');
   $('#after-submit').removeClass('hide');
 });
 
 $('#revertbtn').on("click", function () {
-  $('#type-workout').removeClass('hide');
+  $('h2').removeClass('hide');
   $('#final-buttons').removeClass('hide');
   $('#after-submit').addClass('hide');
-
 });
+
+$('#clearbtn').on('click', function() {
+  $('#type-workout').removeClass('hide');
+  $('#final-buttons').addClass('hide');
+  $('h3').removeClass('hide')
+  chosenListEl.html("");
+  currentWorkoutList=[];
+  buildCardsFromList();
+})
 // make exercise cards a sortable list 
 
 $(function () {
