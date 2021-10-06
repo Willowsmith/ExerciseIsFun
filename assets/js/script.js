@@ -34,7 +34,7 @@ function getQuote() {
     } else {
       author = data[randomQuote].author;
     }
-    $('.main').prepend('<div style="font-style:italic;width:100%;height:auto;">' + data[randomQuote].text + '<div style="margin-left:40%;font-style:normal;"> -' + author + '</div></div>');
+    $('.main').prepend('<div style="font-style:italic;width:100%;height:auto;color:#DBD8E3;">' + data[randomQuote].text + '<div style="margin-left:40%;font-style:normal;color:#DBD8E3"> -' + author + '</div></div>');
   });
 }
 
