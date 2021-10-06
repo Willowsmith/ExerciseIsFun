@@ -1,0 +1,202 @@
+
+body {
+  background: #525252;
+  /* padding: 1%; */
+  font: 1/1.5em sans-serif;
+  text-align: center;
+}
+
+h1,h2,h3,h4,p{
+  color: white;
+  text-align: center;
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] { 
+  /* Set your content font stack here: */
+  font-family: Georgia, Times, "Times New Roman", serif;
+} 
+
+/* Header */
+.header{
+  background-color: #333;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  padding: 50px;
+}
+
+.pure-g > div {
+  box-sizing: border-box;
+} 
+
+
+  /* MAIN ID's */
+#type-workout{
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  color: white;
+  /* padding: 10px; */
+  font-size: 40px;
+}
+    
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* background-color: #333; */
+}
+  
+#final-buttons {
+  text-align: center;
+}
+
+#exercise-modal {
+  padding: 15px;
+  background-color: antiquewhite;
+  color: #333;
+  margin: auto;
+  justify-content: center;
+  width: 60%;
+  border: 2px solid black;
+  position: relative;
+  border-radius: 10px;
+  
+}
+
+.modal {
+  position: fixed;
+  margin: auto;	
+  padding-top: 240px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  z-index: 5;
+  
+}
+
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+
+#search-bar {
+  width: 30%;
+  border-right: 1px solid black;
+  /* padding: 5px */
+  text-align: left;
+}
+
+
+h4 {
+  color: #333;
+  height: 20px;
+  margin: 5px 3px;
+  border-bottom: .5px solid black;
+}
+
+#text-bar {
+  height: 20px;
+  margin: 5px 5px;
+  width: 80%;
+}
+
+#muscle-types {
+  text-align:left;
+}
+
+#exercises {
+  width: 68%;
+  height: 300px;
+  overflow: scroll;
+  margin-top: 20px;
+  padding-left: 5px;
+}
+#exercises li {
+ text-align: left;
+}
+
+#exercise-list li {
+  border-bottom: 1px black solid;
+
+}
+
+h5 {
+  font-size: 20px;
+  height: 30px;
+  border-bottom: .5px solid black;
+  margin: 0px 10px;
+}
+
+#modal-btns {
+  margin-top: 10px;
+}
+
+/* below is for the exercise cards */
+
+#chosen-list { 
+  background: #525252; 
+  border-radius: 10px; 
+  list-style-type: none; 
+  margin: auto; 
+  padding: 0; 
+  width: 90%; 
+  
+}
+
+#chosen-list li { 
+  background: gray;
+  border-radius: 10px; 
+  padding: 0; 
+  float: none; 
+  position: relative; 
+  margin: 3px auto; 
+  height: auto; 
+  min-width: 49%;
+  display: inline-block;
+  overflow: wrap;
+}
+
+#chosen-list p {
+  color: black; 
+  font-size: 16px;
+  text-align: left;
+}
+
+@media only screen and (min-width: 800px) {
+  #chosen-list p {
+    font-size: 1.5vw;
+  }
+}
+
+#chosen-list button {
+  position: absolute; 
+  top:0; 
+  right: 0; 
+  border-radius: 0 10px 0 0;
+}
+  
+#chosen-exercises {
+  width: 100%; 
+  margin: 0; 
+  padding: 0;
+}
+
+#sets, #reps {
+  width: 50px;
+}
+  
+#exercise-modal button {
+  position: absolute; 
+  top:0; 
+  right: 0; 
+  border-radius: 0 10px 0 0;
+}
