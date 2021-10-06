@@ -94,7 +94,7 @@ function buildCardsFromList() {
             '<button data-pos="' + i + '">X</button>' + 
             '<div class="pure-g">' +
             '<div class="sidebar pure-u-1-3">' +
-            '<div style="text-align:center;font-size: .5vw;">Click Below</div>' +
+            '<div style="text-align:center;font-size:1vw;">Click Below</div>' +
             '<img class="hide" style=width:100%;height:auto;" src="' +
             pic + '"></div>' +
             '<div class="content pure-u-2-3">' +
@@ -230,5 +230,24 @@ $('#text-bar').on('keyup', event => {
 })
 
 
+//modal stuff
+$('#exercise-modal').addClass('hide');
+  $('#create').on('click', function(e) {
+    e.preventDefault();
+    $('.container').addClass('modal');
+    $('#exercise-modal').removeClass('hide')
+    $('#exercise-modal').addClass('show');
+  });
+  $('#addbtn').on('click', function(e) {
+    e.preventDefault();
+    $('.container').addClass('modal');
+    $('#exercise-modal').removeClass('hide')
+    $('#exercise-modal').addClass('show');
+  });
+ $('#exit').on ('click', function(){
+   $('.container').removeClass('modal');
+   $('#exercise-modal').removeClass('show');
+   $('#exercise-modal').addClass('hide');
+ }); 
 
 
