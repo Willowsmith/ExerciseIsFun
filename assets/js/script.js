@@ -119,6 +119,8 @@ createEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "");
+  $('#final-buttons').removeClass('hide');
+  $('h3').addClass('hide')
 });
 
 upperEl.on("click", function () {
@@ -126,6 +128,9 @@ upperEl.on("click", function () {
   upperEl.css("background-color", "darkgoldenrod");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "");
+  $('#type-workout').addClass('hide');
+  $('#final-buttons').removeClass('hide');
+  $('h3').addClass('hide')
   chosenListEl.html("");
   currentWorkoutList=[];
   for (v=0; v < upperBodyDefault.length; v++) {
@@ -139,6 +144,9 @@ lowerEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "darkgoldenrod");
   fullEl.css("background-color", "");
+  $('#type-workout').addClass('hide');
+  $('#final-buttons').removeClass('hide');
+  $('h3').addClass('hide')
   chosenListEl.html("");
   currentWorkoutList=[];
   for (v=0; v < lowerBodyDefault.length; v++) {
@@ -152,6 +160,9 @@ fullEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "darkgoldenrod");
+  $('#type-workout').addClass('hide');
+  $('#final-buttons').removeClass('hide');
+  $('h3').addClass('hide')
   chosenListEl.html("");
   currentWorkoutList=[];
   for (v=0; v < fullBodyDefault.length; v++) {
@@ -160,6 +171,27 @@ fullEl.on("click", function () {
   buildCardsFromList();
 });
 
+$('#submitbtn').on("click", function () {
+  $('h2').addClass('hide');
+  $('#type-workout').addClass('hide');
+  $('#final-buttons').addClass('hide');
+  $('#after-submit').removeClass('hide');
+});
+
+$('#revertbtn').on("click", function () {
+  $('h2').removeClass('hide');
+  $('#final-buttons').removeClass('hide');
+  $('#after-submit').addClass('hide');
+});
+
+$('#clearbtn').on('click', function() {
+  $('#type-workout').removeClass('hide');
+  $('#final-buttons').addClass('hide');
+  $('h3').removeClass('hide')
+  chosenListEl.html("");
+  currentWorkoutList=[];
+  buildCardsFromList();
+})
 // make exercise cards a sortable list 
 
 $(function () {
@@ -228,6 +260,7 @@ $("input:radio").on("change", event => {
   finalList = checkFilteredList.filter(function(e) {
     return e.name.toLowerCase().indexOf($('#text-bar').val().toLowerCase()) > -1
   })
+  $(event.currentTarget).toggleClass('active')
   console.log(finalList)
 })
 
@@ -266,5 +299,7 @@ $('#exercise-modal').addClass('hide');
    $('#exercise-modal').removeClass('show');
    $('#exercise-modal').addClass('hide');
  }); 
+
+
 
 
