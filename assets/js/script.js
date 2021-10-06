@@ -228,7 +228,6 @@ $("input:radio").on("change", event => {
   finalList = checkFilteredList.filter(function(e) {
     return e.name.toLowerCase().indexOf($('#text-bar').val().toLowerCase()) > -1
   })
-  $(event.currentTarget).toggleClass('active')
   console.log(finalList)
 })
 
