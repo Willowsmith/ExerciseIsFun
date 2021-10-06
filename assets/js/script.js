@@ -94,7 +94,7 @@ function buildCardsFromList() {
     for (i = 0; i < currentWorkoutList.length; i++) {
           var pic = currentWorkoutList[i].gifUrl;
           chosenListEl.append(
-            '<li class="ex ui-state-default">' + 
+            '<li class="ex ui-state-default pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">' + 
             '<button data-pos="' + i + '">X</button>' + 
             '<div class="pure-g">' +
             '<div class="sidebar pure-u-1-3">' +
@@ -122,6 +122,7 @@ createEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "");
+  $('#type-workout').addClass('hide');
   $('#final-buttons').removeClass('hide');
   $('h3').addClass('hide')
 });
@@ -234,9 +235,7 @@ chosenListEl.on('click', '.reps', function() {
 });
 
 closeModalEl.on('click', function() {
-  
     $('.container').toggleClass('hide');
-
 });
 
 function displayFinalList () {
@@ -281,13 +280,13 @@ $("input:radio").on("change", event => {
   checkFilteredList = equipFilteredList.filter(function(i) {
     return i.target.indexOf($(event.currentTarget).val()) > -1;
   })
-  console.log(checkFilteredList)
+  // console.log(checkFilteredList)
   finalList = checkFilteredList.filter(function(e) {
     return e.name.toLowerCase().indexOf($('#text-bar').val().toLowerCase()) > -1
   })
   $(event.currentTarget).toggleClass('active')
   displayFinalList();
-  console.log(finalList)
+  // console.log(finalList)
 })
 
 $('#text-bar').on('keyup', event => {
@@ -295,7 +294,7 @@ $('#text-bar').on('keyup', event => {
   searchFilteredList = equipFilteredList.filter(function(i) {
     return i.name.toLowerCase().indexOf($(event.currentTarget).val().toLowerCase()) > -1;
   })
-  console.log(searchFilteredList)
+  // console.log(searchFilteredList)
   if ($('input:radio:checked')) {
     finalList = searchFilteredList.filter(function(e) {
       return e.target.indexOf($('input:radio:checked').val()) > -1
@@ -304,29 +303,18 @@ $('#text-bar').on('keyup', event => {
     finalList = searchFilteredList;
   }
   displayFinalList();
-  console.log(finalList)
+  // console.log(finalList)
 })
-
-
 
 //modal stuff
 $('#create').on('click', function(e) {
   e.preventDefault();
   $('.container').toggleClass('hide')
-  
 });
-// these buttons be gone
-//   $('#addbtn').on('click', function(e) {
-//     e.preventDefault();
-//     $('.container').addClass('modal');
-//     $('#exercise-modal').removeClass('hide')
-//     $('#exercise-modal').addClass('show');
-//   });
-//  $('#exit').on ('click', function(){
-//    $('.container').removeClass('modal');
-//    $('#exercise-modal').removeClass('show');
-//    $('#exercise-modal').addClass('hide');
-//  }); 
+$('#addbtn').on('click', function(e) {
+  e.preventDefault();
+  $('.container').toggleClass('hide')
+});
 
 
 

@@ -161,27 +161,6 @@ h5 {
   margin-top: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* below is for the exercise cards */
 
 #chosen-list { 
@@ -189,8 +168,9 @@ h5 {
   border-radius: 10px; 
   list-style-type: none; 
   margin: 0; 
-  padding: 10px; 
+  /* padding: ;  */
   width: 100%; 
+  
 }
 
 #chosen-list li { 
@@ -199,9 +179,10 @@ h5 {
   padding: 0; 
   float:none; 
   position: relative; 
-  margin: 0; 
+  /* margin: 3px;  */
   height: auto; 
-  width: 100%;
+  display: inline-block;
+  overflow: wrap;
 }
 
 #chosen-list p {
@@ -218,7 +199,7 @@ h5 {
 }
   
 #chosen-exercises {
-  width: 50%; 
+  width: 100%; 
   margin: 0; 
   padding: 0;
 }
