@@ -242,16 +242,19 @@ padding: 50px;
         margin: 0 1em 1em 0;
       }
 
+
+/* below is for the exercise cards */
+
   .hide {
       display: none;
   }
-  #chosen-list { list-style-type: none; margin: 0; padding: 0; width: 100%; }
-  #chosen-list li { padding: 0; float:none; position: relative; margin: 0 3px 3px 3px; height: auto; width: 100%;}
+  #chosen-list { background: #525252; border-radius: 10px; list-style-type: none; margin: 0; padding: 10px; width: 100%; }
+  #chosen-list li { border-radius: 10px; padding: 0; float:none; position: relative; margin: 0; height: auto; width: 100%;}
   /* #chosen-list img { position: absolute; float: right;} */
   #chosen-list p {color: black; font-size:1.5vw;text-align: left;}
   /* #chosen-list .content {position: relative;} */
-  #chosen-list button {position: absolute; top:0; right: 0;}
+  #chosen-list button {position: absolute; top:0; right: 0; border-radius: 0 10px 0 0;}
   
-  #chosen-exercises {width: 40%;}
+  #chosen-exercises {width: 50%; margin: 0; padding: 0;}
   #sets, #reps {width: 50px;}
   
