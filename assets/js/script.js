@@ -239,6 +239,7 @@ closeModalEl.on('click', function() {
 });
 
 function displayFinalList () {
+  exerciseListEl.html("");
   for (q=0; q < finalList.length; q++) {
     exerciseListEl.append(
       '<li>' + finalList[q].name + '</li>'
@@ -276,6 +277,7 @@ $("input:radio").on("change", event => {
     return e.name.toLowerCase().indexOf($('#text-bar').val().toLowerCase()) > -1
   })
   $(event.currentTarget).toggleClass('active')
+  displayFinalList();
   console.log(finalList)
 })
 
@@ -292,6 +294,7 @@ $('#text-bar').on('keyup', event => {
   } else {
     finalList = searchFilteredList;
   }
+  displayFinalList();
   console.log(finalList)
 })
 
