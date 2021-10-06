@@ -162,9 +162,9 @@ h5 {
   background: #525252; 
   border-radius: 10px; 
   list-style-type: none; 
-  margin: 0; 
-  /* padding: ;  */
-  width: 100%; 
+  margin: auto; 
+  padding: 0; 
+  width: 90%; 
   
 }
 
@@ -174,10 +174,11 @@ h5 {
   padding: 0; 
   float:none; 
   position: relative; 
-  /* margin: 3px;  */
+  margin: auto; 
   height: auto; 
-  display: inline-block;
-  overflow: wrap;
+  min-width: 49%;
+  /* display: inline-block; */
+  /* overflow: wrap; */
 }
 
 #chosen-list p {
