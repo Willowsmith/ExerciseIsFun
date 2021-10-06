@@ -90,6 +90,7 @@ function generateListByName(name) {
 // builds exercise cards and places them in the main page
 
 function buildCardsFromList() {
+  chosenListEl.html("");
     for (i = 0; i < currentWorkoutList.length; i++) {
           var pic = currentWorkoutList[i].gifUrl;
           chosenListEl.append(
@@ -121,6 +122,7 @@ createEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "");
+  $('#type-workout').addClass('hide');
   $('#final-buttons').removeClass('hide');
   $('h3').addClass('hide')
 });
@@ -240,10 +242,18 @@ function displayFinalList () {
   exerciseListEl.html("");
   for (q=0; q < finalList.length; q++) {
     exerciseListEl.append(
-      '<li>' + finalList[q].name + '</li>'
+      '<li title="Click to add to list" class="modalLi" data-name="' + finalList[q].name + '">NAME: ' + finalList[q].name + '<br>EQUIP: ' + finalList[q].equipment + '</li>'
       )
   }
-}
+};
+
+$(document).tooltip();
+
+exerciseListEl.on('click', '.modalLi', function() {
+  
+  generateListByName($(this).data('name'));
+  buildCardsFromList();
+})
 
 //Paige's Stuff
 
