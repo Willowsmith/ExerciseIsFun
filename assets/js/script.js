@@ -201,23 +201,11 @@ chosenListEl.on('click', '.reps', function() {
 
 //Paige's Stuff
 
-let searchFilteredList = [];
-let checkFilteredList = [];
+// We're only using exercises included in the list (equipFilteredList). When the modal opens I want to be creating a 'chosen list' based off of the search bar, checked boxes or both. 
 let equipFilteredList = [];
-// console.log(exerciseList)
-
-$("input:checkbox").on("change", event => {
-  console.log($(event.currentTarget).val())
-  
-  checkFilteredList = exerciseList.filter(function(exercise) {
-    return exercise.target.indexOf($(event.currentTarget).val()) > -1;
-  })
-  console.log(checkFilteredList)
-  filterByEquipment();
-})
 
 function filterByEquipment() {
-  equipFilteredList = checkFilteredList.filter(function(exercise) {
+  equipFilteredList = exerciseList.filter(function(exercise) {
     return (exercise.equipment.toLowerCase().indexOf('body weight') > -1) + 
     (exercise.equipment.toLowerCase().indexOf('dumbbell') > -1) + 
     (exercise.equipment.toLowerCase().indexOf('barbell') > -1) + 
@@ -226,16 +214,26 @@ function filterByEquipment() {
   console.log(equipFilteredList)
 }
 
+let searchFilteredList = [];
+let checkFilteredList = [];
 
-// console.log(exerciseList);
-// console.log(exerciseList[3].name)
+
+$("input:checkbox").on("change", event => {
+  console.log($(event.currentTarget).val())
+  
+  checkFilteredList = equipFilteredList.filter(function(exercise) {
+    return exercise.target.indexOf($(event.currentTarget).val()) > -1;
+  })
+  console.log(checkFilteredList)
+  filterByEquipment();
+})
 
 $('#text-bar').on('keyup', event => {
-    console.log($(event.currentTarget).val())
-    searchFilteredList = equipFilteredList.filter(function(exercise) {
-      return exercise.name.toLowerCase().indexOf($(event.currentTarget).val().toLowerCase()) > -1;
-      })
-      console.log(searchFilteredList)
+  console.log($(event.currentTarget).val())
+  searchFilteredList = equipFilteredList.filter(function(exercise) {
+    return exercise.name.toLowerCase().indexOf($(event.currentTarget).val().toLowerCase()) > -1;
+  })
+  console.log(searchFilteredList)
 })
 
 
