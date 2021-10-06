@@ -9,6 +9,7 @@ var currentWorkoutList=[];
 var upperBody;
 var lowerBody;
 var chosenListEl = $("#chosen-list");
+var exerciseListEl = $("#exercise-list");
 var exerciseListOjbect 
 var setsEl = $(".sets");
 var repsEl = $(".reps");
@@ -205,6 +206,13 @@ closeModalEl.on('click', function() {
 
 });
 
+function displayFinalList () {
+  for (q=0; q < finalList.length; q++) {
+    exerciseListEl.append(
+      '<li>' + finalList[q].name + '</li>'
+      )
+  }
+}
 
 //Paige's Stuff
 
@@ -235,7 +243,8 @@ $("input:radio").on("change", event => {
   finalList = checkFilteredList.filter(function(e) {
     return e.name.toLowerCase().indexOf($('#text-bar').val().toLowerCase()) > -1
   })
-  console.log(finalList)
+  // console.log(finalList)
+  // displayFinalList();
 })
 
 $('#text-bar').on('keyup', event => {
