@@ -79,6 +79,8 @@ li a:hover {
   justify-content: center;
   width: 60%;
   border: 2px solid black;
+  position: relative;
+  border-radius: 10px;
 }
 
 .container {
@@ -164,24 +166,7 @@ h5 {
 
 
 
-/* for exercise cards */
- /* #chosen-exercises .ui-selecting { background: #FECA40; }
-    #chosen-exercises .ui-selected { background: #F39814; color: white; } */
-#chosen-exercises li {
-  list-style-type: none;
-  margin: 3px;
-  padding: 1px;
-  float: left;
-  width: 100px;
-  height: 80px;
-  font-size: 1em;
-  text-align: left;
-  background: gray;
-}
-    
-.overlay {
-  -webkit-filter: brightness(50%);
-}
+
 
 /* below is for the exercise cards */
 
@@ -195,6 +180,7 @@ h5 {
 }
 
 #chosen-list li { 
+  background: gray;
   border-radius: 10px; 
   padding: 0; 
   float:none; 
@@ -203,13 +189,13 @@ h5 {
   height: auto; 
   width: 100%;
 }
-/* #chosen-list img { position: absolute; float: right;} */
+
 #chosen-list p {
   color: black; 
   font-size:1.5vw;
   text-align: left;
 }
-/* #chosen-list .content {position: relative;} */
+
 #chosen-list button {
   position: absolute; 
   top:0; 
@@ -227,3 +213,9 @@ h5 {
   width: 50px;
 }
   
+#exercise-modal button {
+  position: absolute; 
+  top:0; 
+  right: 0; 
+  border-radius: 0 10px 0 0;
+}
