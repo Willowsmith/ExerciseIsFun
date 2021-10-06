@@ -12,6 +12,7 @@ var chosenListEl = $("#chosen-list");
 var exerciseListOjbect 
 var setsEl = $(".sets");
 var repsEl = $(".reps");
+var imgUrlToggle = false;
 var upperBodyDefault = ['dumbbell bench press', 'dumbbell biceps curl', 'dumbbell bent over row', 'dumbbell seated shoulder press', 'dumbbell seated triceps extension'];
 var lowerBodyDefault = ['dumbbell squat', 'dumbbell deadlift', 'walking lunge', 'barbell glute bridge', 'dumbbell standing calf raise'];
 var fullBodyDefault = ['dumbbell bench press', 'dumbbell deadlift', 'dumbbell bent over row', 'walking lunge', 'dumbbell push press'];
@@ -78,8 +79,8 @@ function generateListByName(name) {
     if (exerciseList[i].name === name) {
       test.push(exerciseList[i]);
       var temp = test.length - 1;
-      test[temp].reps = 1;
-      test[temp].sets = 1;
+      test[temp].reps = 8;
+      test[temp].sets = 3;
     }
   }
 }
@@ -95,8 +96,9 @@ function buildCardsFromList() {
             '<div class="pure-g">' +
             '<div class="sidebar pure-u-1-3">' +
             '<div style="text-align:center;font-size: .5vw;">Click Below</div>' +
-            '<img class="hide" style=width:100%;height:auto;" src="' +
-            pic + '"></div>' +
+            '<img data-pos="' + i + '" class="gif" style="width:100%; height:auto;" src="./assets/images/placeholder.png"></div>' +
+            // '<img class="hide" style=width:100%;height:auto;" src="' +
+            // pic + '"></div>' +
             '<div class="content pure-u-2-3">' +
             '<p>Name: ' + test[i].name + '</p>' +
             '<p>Muscle target: ' + test[i].target + '</p>' +
@@ -166,9 +168,16 @@ $(function () {
 
 // open and close the GIF
 
-chosenListEl.on("click", ".sidebar", function (event) {
-  event.stopPropagation();
-  $(this).find("img").toggleClass("hide");
+chosenListEl.on("click", ".gif", function () {
+  
+  var imgUrlPos = $(this).data('pos')
+  if (!imgUrlToggle) {
+    $(this).attr('src', test[imgUrlPos].gifUrl);
+    imgUrlToggle=true;
+  } else {
+    $(this).attr('src', './assets/images/placeholder.png');
+    imgUrlToggle=false;
+  }
   
 });
 
