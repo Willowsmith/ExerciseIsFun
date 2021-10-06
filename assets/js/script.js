@@ -13,6 +13,7 @@ var exerciseListOjbect
 var setsEl = $(".sets");
 var repsEl = $(".reps");
 var imgUrlToggle = false;
+var closeModalEl = $("#closeModal");
 var upperBodyDefault = ['dumbbell bench press', 'dumbbell biceps curl', 'dumbbell bent over row', 'dumbbell seated shoulder press', 'dumbbell seated triceps extension'];
 var lowerBodyDefault = ['dumbbell squat', 'dumbbell deadlift', 'walking lunge', 'barbell glute bridge', 'dumbbell standing calf raise'];
 var fullBodyDefault = ['dumbbell bench press', 'dumbbell deadlift', 'dumbbell bent over row', 'walking lunge', 'dumbbell push press'];
@@ -198,6 +199,12 @@ chosenListEl.on('click', '.reps', function() {
   currentWorkoutList[$(this).data('pos')].reps = $(this).val();    
 });
 
+closeModalEl.on('click', function() {
+  
+    $('.container').toggleClass('hide');
+
+});
+
 
 //Paige's Stuff
 
@@ -247,24 +254,25 @@ $('#text-bar').on('keyup', event => {
   console.log(finalList)
 })
 
+
+
 //modal stuff
-$('#exercise-modal').addClass('hide');
-  $('#create').on('click', function(e) {
-    e.preventDefault();
-    $('.container').addClass('modal');
-    $('#exercise-modal').removeClass('hide')
-    $('#exercise-modal').addClass('show');
-  });
-  $('#addbtn').on('click', function(e) {
-    e.preventDefault();
-    $('.container').addClass('modal');
-    $('#exercise-modal').removeClass('hide')
-    $('#exercise-modal').addClass('show');
-  });
- $('#exit').on ('click', function(){
-   $('.container').removeClass('modal');
-   $('#exercise-modal').removeClass('show');
-   $('#exercise-modal').addClass('hide');
- }); 
+$('#create').on('click', function(e) {
+  e.preventDefault();
+  $('.container').toggleClass('hide')
+  
+});
+// these buttons be gone
+//   $('#addbtn').on('click', function(e) {
+//     e.preventDefault();
+//     $('.container').addClass('modal');
+//     $('#exercise-modal').removeClass('hide')
+//     $('#exercise-modal').addClass('show');
+//   });
+//  $('#exit').on ('click', function(){
+//    $('.container').removeClass('modal');
+//    $('#exercise-modal').removeClass('show');
+//    $('#exercise-modal').addClass('hide');
+//  }); 
 
 
