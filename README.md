@@ -41,6 +41,7 @@ options as well as close any of the cards presented, they are also able to alter
 button will do the same as Upper but for the lower body, and Full presents options for the full body.
 
 ![exercise options from preselection](./assets/images/exerciseProject3.png)
+</pre>
 
 ## Collaborators
 
