@@ -19,14 +19,21 @@
       <main class="main">
         <section id="workout-questions" class="pure-g pure-u-1">    
             <h2>Welcome to The Workout Plan.</h2>  
-            <section id="type-workout" class="">       
+            <section id="type-workout" class="">    
+                <!--Create button allows for customized exercise plan, and will launch modal form-->   
                 <button id="create" class="pure-button">Create</button>
-                <button id="load" class="pure-button">Load</button>              
-                <button id="upper" class="pure-button">Upper</button>               
-                <button id="lower" class="pure-button">Lower</button>               
+                <!--Load button will allow for saved workout plans to be redisplayed-->
+                <button id="load" class="pure-button">Load</button>      
+                <!--Upper button will present preselected upper body workouts-->        
+                <button id="upper" class="pure-button">Upper</button>       
+                <!--Lower button will present preselected lower body workouts-->        
+                <button id="lower" class="pure-button">Lower</button>   
+                <!--Full button will present preselected full body workouts-->            
                 <button id="full" class="pure-button">Full</button>                
             </section>
+            <!--If the file is not in memory this error will appear in red-->
             <p id="error" class="hide" style="color:red">File name does not exist on this device please try again</p>
+            <!--Input for to take file name for search and loading-->
             <div id="loadform" class="hide">
                 <form>
                     <input id="loadfilename" type="text" placeholder="File Name - Remember this">
@@ -40,14 +47,20 @@
                     <!-- Exercises placed here using JS -->
                 </div>                                          
             </div>
-            <div id="final-buttons" class="hide pure-g pure-u-1">                   
-                <button id="clearbtn" class="pure-button">Clear</button>           
-                <button id="addbtn" class="button-secondary pure-button">Add</button>       
+            <div id="final-buttons" class="hide pure-g pure-u-1">    
+                <!--Clear button will remove all of the previously selected options-->               
+                <button id="clearbtn" class="pure-button">Clear</button>  
+                <!--Add button will bring the button up to add new selections-->         
+                <button id="addbtn" class="button-secondary pure-button">Add</button>  
+                <!--Submit button will present the Revert, Print, and Save buttons-->     
                 <button id="submitbtn" class="button-secondary pure-button">Submit</button> 
             </div>       
             <div id="after-submit" class="hide pure-g pure-u-1">
+                <!--Revert button will present the Clear, Add, and Submit buttons to allow user to continue to make changes-->
                 <button id="revertbtn" class="button-secondary pure-button">Revert</button>
+                <!--Print button will open the a new window to allow the user to print their workouts-->
                 <button id="printbtn" class="button-secondary pure-button">Print</button>
+                <!--Save button will present a text input such that the user can save their exercises to memory-->
                 <button id="savebtn" class="button-secondary pure-button">Save</button>
             </div>  
         </section>
@@ -86,8 +99,10 @@
         </div>
         <div id="saveform" class="hide">
                 <form>
+                    <!--Input that will allow a user to save their selected workout-->
                     <input id="filename" type="text" placeholder="File Name - Remember this">
                 </form>
         </div>
-</body>
+        </main>
+    </body>
 </html>
