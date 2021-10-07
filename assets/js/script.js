@@ -260,7 +260,7 @@ function displayFinalList () {
   exerciseListEl.html("");
   for (q=0; q < finalList.length; q++) {
     exerciseListEl.append(
-      '<li title="Click to add to list" class="modalLi" data-name="' + finalList[q].name + '">NAME: ' + finalList[q].name + '<br>EQUIP: ' + finalList[q].equipment + '</li>'
+      '<li title="Click to add to list" class="modalLi" data-name="' + finalList[q].name + '"><b>' + finalList[q].name + '</b><br>Equipment: ' + finalList[q].equipment + '</li>'
       )
   }
 };
@@ -269,10 +269,8 @@ printBtnEl.on('click', function() {
   window.print();
 })
 
-$(document).tooltip();
-
 exerciseListEl.on('click', '.modalLi', function() {
-  
+  $(this).addClass('modalLiClick')
   generateListByName($(this).data('name'));
   buildCardsFromList();
 });
