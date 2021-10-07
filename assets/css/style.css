@@ -1,212 +1,226 @@
+/* Entire Page */
+  body {
+    background: #525252;
+    font: 1/1.5em sans-serif;
+    text-align: center;
+  }
 
-body {
-  background: #525252;
-  font: 1/1.5em sans-serif;
-  text-align: center;
-}
+  h1, h2, h3, h4, p{
+    color: white;
+    text-align: center;
+  }
 
-h1,h2,h3,h4,p{
-  color: white;
-  text-align: center;
-}
+  html, button, input, select, textarea,
+  .pure-g [class *= "pure-u"] { 
+    font-family: Georgia, Times, "Times New Roman", serif;
+  } 
 
-html, button, input, select, textarea,
-.pure-g [class *= "pure-u"] { 
-  /* Set your content font stack here: */
-  font-family: Georgia, Times, "Times New Roman", serif;
-} 
+  .pure-g > div {
+    box-sizing: border-box;
+  } 
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hide{
+    display: none;
+  }
 
 /* Header */
-header{
-  background-color: #333;
-  text-align: center;
-  font-size: 60px;
-  color: white;
-  padding: 50px;
-}
+  header{
+    background-color: #333;
+    text-align: center;
+    font-size: 60px;
+    color: white;
+    padding: 50px;
+  }
 
-.pure-g > div {
-  box-sizing: border-box;
-} 
+  .quote {
+    border: 2px #333 solid;
+    border-radius: 10px;
+    width: 60%;
+    margin-top: 10px;
+    padding: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    max-width: 1000px;   
+  }
 
-  /* MAIN ID's */
-#type-workout{
-  text-align: center;
-  padding: 20px;
-}
+/* Workout Questions Section */
 
-h2 {
-  color: white;
-  font-size: 40px;
-}
+  h2 {
+    color: white;
+    font-size: 40px;
+  }
+
+  #type-workout{
+    text-align: center;
+    padding: 20px;
+  }
+
+
+/* Workout Plan Section */
     
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+  #chosen-exercises {
+    width: 100%; 
+    margin: 0; 
+    padding: 0;
+  }
+
+  /* below is for the exercise cards */
+  #chosen-list { 
+    background: #525252; 
+    border-radius: 10px; 
+    list-style-type: none; 
+    margin: auto; 
+    padding: 0; 
+    width: 90%; 
+  }
+
+  #chosen-list div { 
+    background: gray;
+    border-radius: 10px; 
+    padding: 0; 
+    position: relative; 
+    overflow: wrap;
+    max-width: 400px; 
+  }
+
+  #chosen-list p {
+    color: black; 
+    font-size: 16px;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 10px;
+    padding-left: 5px;
+  }
+
+  #chosen-list button {
+    position: absolute; 
+    top:0; 
+    right: 0; 
+    border-radius: 0 10px 0 0;
+    z-index: 1;
+  }
+
+  .sets, .reps {
+    width: 10%;
+  }
+
+  #final-buttons {
+    text-align: center;
+  }
+
+/* Modal Section */
+
+  .modal {
+    position: fixed;
+    margin: auto;	
+    padding-top: 240px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    z-index: 5;
+  }
+
+  #exercise-modal {
+    padding: 15px;
+    background-color: antiquewhite;
+    color: #333;
+    margin: auto;
+    justify-content: center;
+    width: 60%;
+    border: 2px solid black;
+    position: relative;
+    border-radius: 10px;
+  }
+
+  #exercise-modal button {
+    position: absolute; 
+    top:0; 
+    right: 0; 
+    border-radius: 0 10px 0 0;
+  }
+
+  #search-bar {
+    border-right: 0px;
+    border-bottom: 1px solid black;
+    text-align: left;
+  }
+
+  h4 {
+    color: #333;
+    height: 20px;
+    margin: 5px 3px;
+    border-bottom: .5px solid black;
+  }
+
+  #text-bar {
+    height: 20px;
+    margin: 5px 5px;
+    width: 80%;
+  }
+
+  #muscle-types {
+    text-align:left;
+  }
+
+  #exercises {
+    height: 300px;
+    overflow: scroll;
+    margin-top: 20px;
+    padding-left: 5px;
+  }
+
+  h5 {
+    font-size: 20px;
+    height: 30px;
+    border-bottom: .5px solid black;
+    margin: 0px 10px;
+  }
+
+  #exercises li {
+    text-align: left;
+  }
+
+  .modalLi {
+    border: 5px groove;
+    margin: 1px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .modalLi:hover {
+    background-color: rgb(168, 156, 139);
+    cursor: pointer;
+  }
+
+  .modalLiClick {
+    background-color: rgb(168, 156, 139);
+  }
+
+  #modal-btns {
+    margin-top: 10px;
+  }
+
+/* SaveForm Section */
+
+
+
+
+
+
+
+
   
-#final-buttons {
-  text-align: center;
-}
 
-#exercise-modal {
-  padding: 15px;
-  background-color: antiquewhite;
-  color: #333;
-  margin: auto;
-  justify-content: center;
-  width: 60%;
-  border: 2px solid black;
-  position: relative;
-  border-radius: 10px;
-}
 
-.modal {
-  position: fixed;
-  margin: auto;	
-  padding-top: 240px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  z-index: 5;
-}
-
-.modalLi {
-  border: 5px groove;
-  margin: 1px;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.modalLi:hover {
-  background-color: rgb(168, 156, 139);
-  cursor: pointer
-}
-
-.modalLiClick {
-  background-color: rgb(168, 156, 139)
-}
-
-.hide{
-  display: none;
-}
-
-.show{
-  display: block;
-}
-
-#search-bar {
-  border-right: 0px;
-  border-bottom: 1px solid black;
-  text-align: left;
-}
-
-h4 {
-  color: #333;
-  height: 20px;
-  margin: 5px 3px;
-  border-bottom: .5px solid black;
-}
-
-#text-bar {
-  height: 20px;
-  margin: 5px 5px;
-  width: 80%;
-}
-
-#muscle-types {
-  text-align:left;
-}
-
-#exercises {
-  /* width: 100%; */
-  height: 300px;
-  overflow: scroll;
-  margin-top: 20px;
-  padding-left: 5px;
-}
-#exercises li {
- text-align: left;
-}
-
-h5 {
-  font-size: 20px;
-  height: 30px;
-  border-bottom: .5px solid black;
-  margin: 0px 10px;
-}
-
-#modal-btns {
-  margin-top: 10px;
-}
-
-/* below is for the exercise cards */
-
-#chosen-list { 
-  background: #525252; 
-  border-radius: 10px; 
-  list-style-type: none; 
-  margin: auto; 
-  padding: 0; 
-  width: 90%; 
-}
-
-#chosen-list div { 
-  background: gray;
-  border-radius: 10px; 
-  padding: 0; 
-  position: relative; 
-  overflow: wrap;
-  max-width: 400px; 
-}
-
-#chosen-list p {
-  color: black; 
-  font-size: 16px;
-  text-align: left;
-  margin: 0;
-  margin-bottom: 10px;
-  padding-left: 5px;
-}
-
-#chosen-list button {
-  position: absolute; 
-  top:0; 
-  right: 0; 
-  border-radius: 0 10px 0 0;
-  z-index: 1;
-}
-  
-#chosen-exercises {
-  width: 100%; 
-  margin: 0; 
-  padding: 0;
-}
-
-.sets, .reps {
-  width: 10%;
-}
-  
-#exercise-modal button {
-  position: absolute; 
-  top:0; 
-  right: 0; 
-  border-radius: 0 10px 0 0;
-}
-
-.quote {
-  border: 2px #333 solid;
-  border-radius: 10px;
-  width: 60%;
-  margin-top: 10px;
-  padding: 5px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  max-width: 1000px;   
-}
+/* Responsiveness CSS */
 
 @media screen and (min-width: 64em) {
   #search-bar {
