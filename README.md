@@ -24,7 +24,7 @@ in tailoring the results to the user. These options are Create, Upper, Lower, an
 Link to website:
 [Workout Planner website](https://willowsmith.github.io/ExerciseIsFun/)
 
-![inital website](./assets/images/SS_load.PNG)
+![inital website](./assets/images/SS_load.png)
 
 <pre>
     Clicking on Create will present the user with a modal that will allow the user to select a finer subset of 
@@ -34,7 +34,7 @@ Exercises, which will allow a user to remove all of their selections and start a
 will add the selected exercises to their presented plan, and Exit which will simply close the modal. 
 </pre>
 
-![modal example](./assets/images/SS_modal.PNG)
+![modal example](./assets/images/SS_modal.png)
 <pre>
     Upper will pesent the user with options that are specific to the upper body and allow them to select from 
 those options as well as close any of the cards presented, they are also able to alter the suggested sets and 
@@ -42,7 +42,7 @@ reps. The Lower button will do the same as Upper but for the lower body, and Ful
 body.
 </pre>
 
-![exercise options from preselection](./assets/images/SS_workout.PNG)
+![exercise options from preselection](./assets/images/SS_workout.png)
 
 <pre>
     Once the user's workout is planned as they want they can hit the 'submit' button at the bottom, this will provide
@@ -50,14 +50,14 @@ a clean view of the workout by removing content from the top of the screen. Upon
 screen will also pop up. 
 </pre>
 
-![Save and Print Selection](./assets/images/SS_print.PNG)
+![Save and Print Selection](./assets/images/SS_print.png)
 
 <pre>
     From the submit page they can also save this workout with a unique name to local storage. If they then reload the 
 page and type in that name their saved workout would apppear once more.
 </pre>
 
-![Save and Print Selection](./assets/images/SS_save.PNG)
+![Save and Print Selection](./assets/images/SS_save.png)
 ## Collaborators
 
 - Paige Olsen [github address](https://github.com/POlsen-92)
