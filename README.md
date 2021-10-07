@@ -9,6 +9,9 @@ The problem that this website solves is greatly increasing the efficiency of dec
 
 Upon load, the users shold be presented with an inspirational quote and four buttons which give options in tailoring the results to the user. These options are Create, Upper, Lower, and Full. 
 
+Link to website:
+[Workout Planner website](https://willowsmith.github.io/ExerciseIsFun/)
+
 ![inital website](./assets/images/exerciseProject1.png)
 
 Clicking on Create will present the user with a modal that will allow the user to select a finer subset of areas to work as well as allow them to search for specific exercises. This will present the user with options that will allow them to customize their workout manually, this modal has 3 buttons as well, these being Clear Exercises, which will allow a user to remove all of their selections and start again, Submit Exercises, which will add the selected exercises to their presented plan, and Exit which will simply close the modal. 
@@ -22,15 +25,15 @@ Upper will rpesent the user with options that are specific to the upper body and
 
 ## Collaborators
 
-Paige Olsen ![Paige Olsen's github address](https://github.com/POlsen-92)
-Mark Lohse-Miranda ![Mark Lohse-Miranda's github address](https://github.com/Mark-LohseMiranda)
-Mohammed Abbasi ![Mohammed Abbasi's github address](https://github.com/abbasiafnan9)
-Melyssa Dennis ![Melyssa Dennis's github address](https://github.com/Willowsmith)
+Paige Olsen [Paige Olsen's github address](https://github.com/POlsen-92)
+Mark Lohse-Miranda [Mark Lohse-Miranda's github address](https://github.com/Mark-LohseMiranda)
+Mohammed Abbasi [Mohammed Abbasi's github address](https://github.com/abbasiafnan9)
+Melyssa Dennis [Melyssa Dennis's github address](https://github.com/Willowsmith)
 
 Two APIs were used in the creation of this website from which exercise data and inspirational quotes were pulled.
 
-![RapidAPI website link](https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/details)
-![Type.Fit API Quotes link](https://type.fit/api/quotes)
+[RapidAPI website link](https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/details)
+[Type.Fit API Quotes link](https://type.fit/api/quotes)
 
 We also used Pure.css for our css framework:
-![Pure.css webpage](https://purecss.io/)
+[Pure.css webpage](https://purecss.io/)
