@@ -1,7 +1,6 @@
 
 body {
   background: #525252;
-  /* padding: 1%; */
   font: 1/1.5em sans-serif;
   text-align: center;
 }
@@ -30,7 +29,6 @@ header{
   box-sizing: border-box;
 } 
 
-
   /* MAIN ID's */
 #type-workout{
   text-align: center;
@@ -39,7 +37,6 @@ header{
 
 h2 {
   color: white;
-  
   font-size: 40px;
 }
     
@@ -47,7 +44,6 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  
 }
   
 #final-buttons {
@@ -64,7 +60,6 @@ ul {
   border: 2px solid black;
   position: relative;
   border-radius: 10px;
-  
 }
 
 .modal {
@@ -78,12 +73,28 @@ ul {
   background-color: rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   z-index: 5;
-  
+}
+
+.modalLi {
+  border: 5px groove;
+  margin: 1px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.modalLi:hover {
+  background-color: rgb(168, 156, 139);
+  cursor: pointer
+}
+
+.modalLiClick {
+  background-color: rgb(168, 156, 139)
 }
 
 .hide{
   display: none;
 }
+
 .show{
   display: block;
 }
@@ -93,7 +104,6 @@ ul {
   border-bottom: 1px solid black;
   text-align: left;
 }
-
 
 h4 {
   color: #333;
@@ -123,11 +133,6 @@ h4 {
  text-align: left;
 }
 
-#exercise-list li {
-  border-bottom: 1px black solid;
-
-}
-
 h5 {
   font-size: 20px;
   height: 30px;
@@ -148,7 +153,6 @@ h5 {
   margin: auto; 
   padding: 0; 
   width: 90%; 
-  
 }
 
 #chosen-list div { 
@@ -158,7 +162,6 @@ h5 {
   position: relative; 
   overflow: wrap;
   max-width: 400px; 
-  
 }
 
 #chosen-list p {
@@ -210,11 +213,11 @@ h5 {
     border-bottom: 0;
     border-right: 1px solid black;
   }
-
   #exercise-modal {
     max-width: 600px;
   }
 }
+
 @media screen and (max-width: 600px) {
   header {
     font-size: 2.5em;
