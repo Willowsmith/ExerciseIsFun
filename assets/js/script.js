@@ -123,10 +123,6 @@ function buildCardsFromList() {
 // change color when clicked
 
 createEl.on("click", function () {
-  createEl.css("background-color", "darkgoldenrod");
-  upperEl.css("background-color", "");
-  lowerEl.css("background-color", "");
-  fullEl.css("background-color", "");
   $('#type-workout').toggleClass('hide');
   $('#final-buttons').toggleClass('hide');
   $('h3').toggleClass('hide')
@@ -134,10 +130,6 @@ createEl.on("click", function () {
 });
 
 upperEl.on("click", function () {
-  createEl.css("background-color", "");
-  upperEl.css("background-color", "darkgoldenrod");
-  lowerEl.css("background-color", "");
-  fullEl.css("background-color", "");
   $('#type-workout').toggleClass('hide');
   $('#final-buttons').toggleClass('hide');
   $('h3').toggleClass('hide')
@@ -151,10 +143,6 @@ upperEl.on("click", function () {
 });
 
 lowerEl.on("click", function () {
-  createEl.css("background-color", "");
-  upperEl.css("background-color", "");
-  lowerEl.css("background-color", "darkgoldenrod");
-  fullEl.css("background-color", "");
   $('#type-workout').toggleClass('hide');
   $('#final-buttons').toggleClass('hide');
   $('h3').toggleClass('hide')
@@ -168,10 +156,6 @@ lowerEl.on("click", function () {
 });
 
 fullEl.on("click", function () {
-  createEl.css("background-color", "");
-  upperEl.css("background-color", "");
-  lowerEl.css("background-color", "");
-  fullEl.css("background-color", "darkgoldenrod");
   $('#type-workout').toggleClass('hide');
   $('#final-buttons').toggleClass('hide');
   $('h3').toggleClass('hide')
@@ -298,6 +282,7 @@ $('#loadform').on('submit', function(event) {
     buildCardsFromList()
   } else {
     $('#error').toggleClass('hide');
+    currentWorkoutList = [];
   }
 })
 
@@ -362,6 +347,7 @@ $('#text-bar').on('keyup', event => {
 //modal stuff
 $('#create').on('click', function(e) {
   e.preventDefault();
+  checkError();
   $('.container').toggleClass('hide')
 });
 $('#addbtn').on('click', function(e) {
