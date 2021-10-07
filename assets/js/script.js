@@ -16,6 +16,10 @@ var repsEl = $(".reps");
 var imgUrlToggle = false;
 var closeModalEl = $("#closeModal");
 var printBtnEl = $("#printbtn");
+var saveBtnEl = $("#savebtn");
+var fileNameEl = $("#filename");
+var loadBtnEl = $("#load");
+var errorEl = $("#error");
 var upperBodyDefault = ['dumbbell bench press', 'dumbbell biceps curl', 'dumbbell bent over row', 'dumbbell seated shoulder press', 'dumbbell seated triceps extension'];
 var lowerBodyDefault = ['dumbbell squat', 'dumbbell deadlift', 'walking lunge', 'barbell glute bridge', 'dumbbell standing calf raise'];
 var fullBodyDefault = ['dumbbell bench press', 'dumbbell deadlift', 'dumbbell bent over row', 'walking lunge', 'dumbbell push press'];
@@ -97,13 +101,13 @@ function buildCardsFromList() {
           chosenListEl.append(
             '<div class="ex ui-state-default pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-4">' + 
             '<button data-pos="' + i + '">X</button>' + 
-            '<div class="pure-g">' +
+            '<div style="padding-top:20px;" class="pure-g">' +
             '<div class="sidebar pure-u-1-3">' +
             '<div style="text-align:center;font-size: .5vw;">Click Below</div>' +
             '<img data-pos="' + i + '" class="gif" style="width:100%; height:auto;" src="./assets/images/placeholder.png"></div>' +
             // '<img class="hide" style=width:100%;height:auto;" src="' +
             // pic + '"></div>' +
-            '<div class="content pure-u-2-3">' +
+            '<div style="line-height: 16px;" class="content pure-u-2-3">' +
             '<p>Name: ' + currentWorkoutList[i].name + '</p>' +
             '<p>Muscle target: ' + currentWorkoutList[i].target + '</p>' +
             '<p>Sets: ' + 
@@ -123,9 +127,10 @@ createEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "");
-  $('#type-workout').addClass('hide');
-  $('#final-buttons').removeClass('hide');
-  $('h3').addClass('hide')
+  $('#type-workout').toggleClass('hide');
+  $('#final-buttons').toggleClass('hide');
+  $('h3').toggleClass('hide')
+  checkError();
 });
 
 upperEl.on("click", function () {
@@ -133,9 +138,10 @@ upperEl.on("click", function () {
   upperEl.css("background-color", "darkgoldenrod");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "");
-  $('#type-workout').addClass('hide');
-  $('#final-buttons').removeClass('hide');
-  $('h3').addClass('hide')
+  $('#type-workout').toggleClass('hide');
+  $('#final-buttons').toggleClass('hide');
+  $('h3').toggleClass('hide')
+  checkError();
   chosenListEl.html("");
   currentWorkoutList=[];
   for (v=0; v < upperBodyDefault.length; v++) {
@@ -149,9 +155,10 @@ lowerEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "darkgoldenrod");
   fullEl.css("background-color", "");
-  $('#type-workout').addClass('hide');
-  $('#final-buttons').removeClass('hide');
-  $('h3').addClass('hide')
+  $('#type-workout').toggleClass('hide');
+  $('#final-buttons').toggleClass('hide');
+  $('h3').toggleClass('hide')
+  checkError();
   chosenListEl.html("");
   currentWorkoutList=[];
   for (v=0; v < lowerBodyDefault.length; v++) {
@@ -165,9 +172,10 @@ fullEl.on("click", function () {
   upperEl.css("background-color", "");
   lowerEl.css("background-color", "");
   fullEl.css("background-color", "darkgoldenrod");
-  $('#type-workout').addClass('hide');
-  $('#final-buttons').removeClass('hide');
-  $('h3').addClass('hide')
+  $('#type-workout').toggleClass('hide');
+  $('#final-buttons').toggleClass('hide');
+  $('h3').toggleClass('hide')
+  checkError();
   chosenListEl.html("");
   currentWorkoutList=[];
   for (v=0; v < fullBodyDefault.length; v++) {
@@ -175,6 +183,15 @@ fullEl.on("click", function () {
   };
   buildCardsFromList();
 });
+
+function checkError() {
+  if (!errorEl.hasClass('hide')) {
+    errorEl.toggleClass('hide');
+  }
+  if (!($('#loadform').hasClass('hide'))) {
+    $('#loadform').toggleClass('hide');
+  }
+}
 
 $('#submitbtn').on("click", function () {
   $('h2').addClass('hide');
@@ -248,8 +265,7 @@ function displayFinalList () {
   }
 };
 
-printBtnEl.on('click', function(event) {
-  event.stopPropagation;
+printBtnEl.on('click', function() {
   window.print();
 })
 
@@ -259,6 +275,39 @@ exerciseListEl.on('click', '.modalLi', function() {
   
   generateListByName($(this).data('name'));
   buildCardsFromList();
+});
+
+saveBtnEl.on('click', function() {
+  $('#saveform').toggleClass('hide');
+})
+
+loadBtnEl.on('click', function() {
+  $('#loadform').toggleClass('hide');
+})
+
+$('#loadform').on('submit', function(event) {
+  event.preventDefault();
+  var saveName = $('#loadfilename').val();
+  currentWorkoutList = [];
+  currentWorkoutList = JSON.parse(localStorage.getItem(saveName));
+  if (currentWorkoutList != null) {
+    $('#loadform').toggleClass('hide');
+    $('h2').addClass('hide');
+    $('#type-workout').addClass('hide');
+    $('#final-buttons').addClass('hide');
+    $('#after-submit').removeClass('hide');
+    checkError();
+    buildCardsFromList()
+  } else {
+    $('#error').toggleClass('hide');
+  }
+})
+
+$('#saveform').on('submit', function(event) {
+  event.preventDefault();
+  var saveName = fileNameEl.val();
+  localStorage.setItem(saveName, JSON.stringify(currentWorkoutList));
+  $('#saveform').toggleClass('hide');
 })
 
 //Paige's Stuff
