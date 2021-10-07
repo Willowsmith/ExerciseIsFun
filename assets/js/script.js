@@ -15,6 +15,7 @@ var setsEl = $(".sets");
 var repsEl = $(".reps");
 var imgUrlToggle = false;
 var closeModalEl = $("#closeModal");
+var printBtnEl = $("#printbtn");
 var upperBodyDefault = ['dumbbell bench press', 'dumbbell biceps curl', 'dumbbell bent over row', 'dumbbell seated shoulder press', 'dumbbell seated triceps extension'];
 var lowerBodyDefault = ['dumbbell squat', 'dumbbell deadlift', 'walking lunge', 'barbell glute bridge', 'dumbbell standing calf raise'];
 var fullBodyDefault = ['dumbbell bench press', 'dumbbell deadlift', 'dumbbell bent over row', 'walking lunge', 'dumbbell push press'];
@@ -34,7 +35,7 @@ function getQuote() {
     } else {
       author = data[randomQuote].author;
     }
-    $('.main').prepend('<div style="font-style:italic;width:100%;height:auto;color:#DBD8E3;">' + data[randomQuote].text + '<div style="margin-left:40%;font-style:normal;color:#DBD8E3"> -' + author + '</div></div>');
+    $('.main').prepend('<div class="quote pure-u-1"><div style="font-style:italic;width:100%;height:auto;color:#DBD8E3;">' + data[randomQuote].text + '<div style="margin-left:40%;font-style:normal;color:#DBD8E3"> -' + author + '</div></div></div>');
   });
 }
 
@@ -94,7 +95,7 @@ function buildCardsFromList() {
     for (i = 0; i < currentWorkoutList.length; i++) {
           var pic = currentWorkoutList[i].gifUrl;
           chosenListEl.append(
-            '<li class="ex ui-state-default pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">' + 
+            '<div class="ex ui-state-default pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-4">' + 
             '<button data-pos="' + i + '">X</button>' + 
             '<div class="pure-g">' +
             '<div class="sidebar pure-u-1-3">' +
@@ -106,11 +107,11 @@ function buildCardsFromList() {
             '<p>Name: ' + currentWorkoutList[i].name + '</p>' +
             '<p>Muscle target: ' + currentWorkoutList[i].target + '</p>' +
             '<p>Sets: ' + 
-            '<input type="number" data-pos="' + i + '" class="sets" min="1" value="' + currentWorkoutList[i].sets + '"></p>' +
+            '<input style="width: 20%;" type="number" data-pos="' + i + '" class="sets" min="1" value="' + currentWorkoutList[i].sets + '"></p>' +
             '<p>Reps: ' +
-            '<input type="number" data-pos="' + i + '" class="reps" min="1" value="' + currentWorkoutList[i].reps + '"></p>' +
+            '<input style="width: 20%;" type="number" data-pos="' + i + '" class="reps" min="1" value="' + currentWorkoutList[i].reps + '"></p>' +
             '<p>Equipment: ' + currentWorkoutList[i].equipment + '</p>' +
-            '</div></div></li>')
+            '</div></div></div>')
         
     }
 }
@@ -246,6 +247,11 @@ function displayFinalList () {
       )
   }
 };
+
+printBtnEl.on('click', function(event) {
+  event.stopPropagation;
+  window.print();
+})
 
 $(document).tooltip();
 

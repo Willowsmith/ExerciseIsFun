@@ -152,17 +152,14 @@ h5 {
   
 }
 
-#chosen-list li { 
+#chosen-list div { 
   background: gray;
   border-radius: 10px; 
   padding: 0; 
-  float: none; 
   position: relative; 
-  margin: 3px auto; 
-  height: auto; 
-  min-width: 49%;
-  display: inline-block;
   overflow: wrap;
+  max-width: 400px; 
+  
 }
 
 #chosen-list p {
@@ -171,17 +168,12 @@ h5 {
   text-align: left;
 }
 
-@media only screen and (min-width: 800px) {
-  #chosen-list p {
-    font-size: 1.5vw;
-  }
-}
-
 #chosen-list button {
   position: absolute; 
   top:0; 
   right: 0; 
   border-radius: 0 10px 0 0;
+  z-index: 1;
 }
   
 #chosen-exercises {
@@ -190,8 +182,8 @@ h5 {
   padding: 0;
 }
 
-#sets, #reps {
-  width: 50px;
+.sets, .reps {
+  width: 10%;
 }
   
 #exercise-modal button {
@@ -199,4 +191,14 @@ h5 {
   top:0; 
   right: 0; 
   border-radius: 0 10px 0 0;
+}
+
+.quote {
+  border: 2px #333 solid;
+  border-radius: 10px;
+  width: 60%;
+  margin-top: 10px;
+  padding: 5px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  max-width: 1000px;   
 }
