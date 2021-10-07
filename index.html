@@ -16,24 +16,33 @@
 <!-- NP = NON-PRIORITY -->
 </head>
 <body class="">
-    <header class="header">Workout Planner</header>                   
+    <header class="">Workout Planner</header>                   
       <main class="main">
         <section id="workout-questions" class="pure-g pure-u-1">    
             <h2>Welcome to The Workout Plan.</h2>  
             <section id="type-workout" class=""> 
                 <!-- MVP TASK -->        
-                <button id="create" class="pure-button">Create</button>              
+                <button id="create" class="pure-button">Create</button>
+                <button id="load" class="pure-button">Load</button>              
                 <button id="upper" class="pure-button">Upper</button>               
                 <button id="lower" class="pure-button">Lower</button>               
                 <button id="full" class="pure-button">Full</button>                
             </section>
+            <p id="error" class="hide" style="color:red">File name does not exist on this device please try again</p>
+            <div id="loadform" class="hide">
+                <form>
+                    <input id="loadfilename" type="text" placeholder="File Name - Remember this">
+                </form>
+            
+
+            </div>
             <h3>Choose a Setting Above to Get Started!</h3>
         </section>
-        <section id="work-out-plan" class="pure-g">
-            <div id="chosen-exercises" class="pure-g">    
-                <ul id="chosen-list" class="pure-g">
+        <section id="work-out-plan" class="">
+            <div id="chosen-exercises" class="">    
+                <div id="chosen-list" class="pure-g">
                     <!-- Exercises placed here using JS -->
-                </ul>                                          
+                </div>                                          
             </div>
             <div id="final-buttons" class="hide pure-g pure-u-1">                   
                 <button id="clearbtn" class="pure-button">Clear</button>           
@@ -42,18 +51,21 @@
             </div>       
             <div id="after-submit" class="hide pure-g pure-u-1">
                 <button id="revertbtn" class="button-secondary pure-button">Revert</button>
+                <button id="printbtn" class="button-secondary pure-button">Print</button>
+                <button id="savebtn" class="button-secondary pure-button">Save</button>
             </div>  
         </section>
 
         <!-- MODAL SECTION -->                                  <!-- MVP -->
         <div class = "hide modal container">
             <section id="exercise-modal" class="pure-g"> 
-                <button id="closeModal">X</button>                 
-                <form id="search-bar" class="pure-g pure-u-1-3">                    
-                    <input type="text" id="text-bar" class=""> 
-                    <h4>Filter Muscles</h4>
-                        <div id="muscle-types" class="pure-g pure-u-1">
-                            <input type="radio" name="muscles" class="" id="pecs" value="pectorals" /><label for="pecs">Pecs</label> <br>
+                <button id="closeModal">X</button> 
+                <div class="pure-u-1 pure-u-lg-1-3">                 
+                    <form id="search-bar">                    
+                        <input type="text" id="text-bar" class=""> 
+                        <h4>Filter Muscles</h4>
+                        <div id="muscle-types" class="">
+                            <input type="radio" name="muscles" class="" id="pecs" value="pectorals" checked/><label for="pecs">Pecs</label> <br>
                             <input type="radio" name="muscles" class="" id="biceps" value="biceps"/><label for="biceps">Biceps</label> <br>
                             <input type="radio" name="muscles" class="" id="triceps" value="triceps"/><label for="triceps">Triceps</label> <br>
                             <input type="radio" name="muscles" class="" id="shoulders" value="delts"/><label for="delts">Shoulders</label> <br>
@@ -66,8 +78,9 @@
                             <input type="radio" name="muscles"class="" id="abs" value="abs" /><label for="abs">Abs</label> <br>
                             <input type="radio" name="muscles"class="" id="spine" value="spine" /><label for="spine">Back</label> <br>
                         </div>                                                
-                </form>
-                <div id="exercises" class="pure-u-2-3">                       
+                    </form>
+                </div>
+                <div id="exercises" class="pure-u-1 pure-u-lg-2-3">                       
                     <h5>Exercises</h5>
                     <ul id="exercise-list" class="">    
             
@@ -75,12 +88,14 @@
                 </div>      
             </section>
         </div>
-    <footer>
-        <br>
-        <br>
-        <br>
-        <!-- our names maybe? IDK something fun -->
-    </footer>
+        <div id="saveform" class="hide">
+            
+                <form>
+                    <input id="filename" type="text" placeholder="File Name - Remember this">
+                </form>
+            
+
+        </div>
     
 </body>
 </html>

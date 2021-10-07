@@ -18,7 +18,7 @@ html, button, input, select, textarea,
 } 
 
 /* Header */
-.header{
+header{
   background-color: #333;
   text-align: center;
   font-size: 60px;
@@ -39,7 +39,7 @@ html, button, input, select, textarea,
 
 h2 {
   color: white;
-  /* padding: 10px; */
+  
   font-size: 40px;
 }
     
@@ -47,7 +47,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  /* background-color: #333; */
+  
 }
   
 #final-buttons {
@@ -89,9 +89,8 @@ ul {
 }
 
 #search-bar {
-  width: 30%;
-  border-right: 1px solid black;
-  /* padding: 5px */
+  border-right: 0px;
+  border-bottom: 1px solid black;
   text-align: left;
 }
 
@@ -114,7 +113,7 @@ h4 {
 }
 
 #exercises {
-  width: 68%;
+  /* width: 100%; */
   height: 300px;
   overflow: scroll;
   margin-top: 20px;
@@ -152,29 +151,23 @@ h5 {
   
 }
 
-#chosen-list li { 
+#chosen-list div { 
   background: gray;
   border-radius: 10px; 
   padding: 0; 
-  float: none; 
   position: relative; 
-  margin: 3px auto; 
-  height: auto; 
-  min-width: 49%;
-  display: inline-block;
   overflow: wrap;
+  max-width: 400px; 
+  
 }
 
 #chosen-list p {
   color: black; 
   font-size: 16px;
   text-align: left;
-}
-
-@media only screen and (min-width: 800px) {
-  #chosen-list p {
-    font-size: 1.5vw;
-  }
+  margin: 0;
+  margin-bottom: 10px;
+  padding-left: 5px;
 }
 
 #chosen-list button {
@@ -182,6 +175,7 @@ h5 {
   top:0; 
   right: 0; 
   border-radius: 0 10px 0 0;
+  z-index: 1;
 }
   
 #chosen-exercises {
@@ -190,8 +184,8 @@ h5 {
   padding: 0;
 }
 
-#sets, #reps {
-  width: 50px;
+.sets, .reps {
+  width: 10%;
 }
   
 #exercise-modal button {
@@ -199,4 +193,36 @@ h5 {
   top:0; 
   right: 0; 
   border-radius: 0 10px 0 0;
+}
+
+.quote {
+  border: 2px #333 solid;
+  border-radius: 10px;
+  width: 60%;
+  margin-top: 10px;
+  padding: 5px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  max-width: 1000px;   
+}
+
+@media screen and (min-width: 64em) {
+  #search-bar {
+    border-bottom: 0;
+    border-right: 1px solid black;
+  }
+
+  #exercise-modal {
+    max-width: 600px;
+  }
+}
+@media screen and (max-width: 600px) {
+  header {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 406px) {
+  header {
+    font-size: 2.0em;
+  }
 }
